@@ -2,6 +2,14 @@
     //border-left: 6px solid var( --ion-color-tertiary);
     border-left: 8px solid #514aac;//#7f0000;
     border-right: 4px solid #514aac; //#7f0000;
+
+    ion-label{
+      color: #514aac;
+    }
+}
+
+ion-toolbar {
+  background-color: #00796B;
 }
 /*
 --ion-color-primary: #3880ff;
