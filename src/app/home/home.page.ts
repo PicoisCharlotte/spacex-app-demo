@@ -7,5 +7,4 @@ import { SkeletonComponent } from '../components/skeleton/skeleton.component';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
 }

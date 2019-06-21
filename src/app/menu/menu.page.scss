@@ -1,15 +1,14 @@
 .active-item {
     //border-left: 6px solid var( --ion-color-tertiary);
-    border-left: 8px solid #514aac;//#7f0000;
-    border-right: 4px solid #514aac; //#7f0000;
+    border-left: 8px solid #880e4f;
+    border-right: 4px solid #880e4f;
 
     ion-label{
-      color: #514aac;
+      color: #7f0000; //#b2dfdb;
     }
 }
-
-ion-toolbar {
-  background-color: #00796B;
+.menu {
+  color: white;
 }
 /*
 --ion-color-primary: #3880ff;
