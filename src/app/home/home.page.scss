@@ -58,9 +58,13 @@
     ion-card-content {
         color: #fff;
         text-align: center;
+        font-family: QuanticoRegular;
 
-        ion-label {
+        ion-label > p {
             //text-align: center;
+            margin-top: 10px;
+            line-height: 200%;
+            color: rgba(255, 255, 255, 0.8)
         }
     }
 }
