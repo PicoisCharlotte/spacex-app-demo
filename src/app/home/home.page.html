@@ -1,11 +1,38 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Home</ion-title>
+<ion-header id="homePage">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start"></ion-buttons>
+    <ion-title>SPACE X</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-    <!--<app-skeleton></app-skeleton>-->
+  <img style="width: 100%; height: 100%;" src="../../assets/img/spaceX.jpg"/>
+  <div id="container-body">
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+              <img src="../../assets/icon/warning3.png"/>
+              PROCHAINE MISSION
+              <img id="imgRight" src="../../assets/icon/warning3.png"/>
+              <div *ngIf="chrono">
+                <ion-card-subtitle>{{ chrono }}</ion-card-subtitle>
+              </div>
+          </ion-card-title>
+          <ion-item href="#">
+              <img style="width: 5%; padding-right: 10px;" src="../../assets/icon/bell.png"/>
+              <!--<ion-icon name="wifi" slot="start"></ion-icon>-->
+              <ion-label>Fiche détaillée sur la future mission</ion-label>
+            </ion-item>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <div *ngIf="nextlaunch">
+            <ion-label>
+              <h1>{{ nextlaunch.mission_name }}</h1>
+              <h3>{{ nextlaunch.rocket.rocket_name }}</h3>
+              <p>{{ nextlaunch.details }}</p>
+            </ion-label>
+          </div>
+        </ion-card-content>
+      </ion-card>
+  </div>
 </ion-content>
