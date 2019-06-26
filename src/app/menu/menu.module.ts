@@ -49,6 +49,10 @@ const routes: Routes = [
       {
         path: 'payloads/details/:payloadId',
         loadChildren: '../payload/details/details.module#DetailsPageModule'
+      },
+      {
+        path: 'cores',
+        loadChildren: '../core/core.module#CorePageModule'
       }
     ]
   }

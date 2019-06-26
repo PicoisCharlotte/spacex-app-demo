@@ -19,17 +19,17 @@ export class MenuPage implements OnInit {
     {
       title: 'Missions',
       url: '/menu/missions',
-      icon : 'locate'
+      icon : '/assets/icon/radar.png'
     },
     {
       title: 'Payloads',
       url: '/menu/payloads',
-      icon: 'cube'
+      icon: '/assets/icon/payload.png'
     },
     {
       title: 'Rockets',
       url: '/menu/first',
-      icon:'/assets/icon/rocket.png'
+      icon: '/assets/icon/rocket.png'
     },
     {
       title: 'Second',
@@ -42,9 +42,9 @@ export class MenuPage implements OnInit {
       icon: '/assets/icon/cal.png'
     },
     {
-      title: 'Missions',
-      url: '/menu/mission',
-      icon : '/assets/icon/radar.png'
+      title: 'Core',
+      url: '/menu/cores',
+      icon: '/assets/icon/core.png'
     }
   ];
   constructor(
