@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Core</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!cores"></app-skeleton>
+  <ion-list>
+    <ion-item-sliding *ngFor="let core of cores"
+        [ngClass]="{'active': core.status === 'active',
+                    'lost': core.status === 'lost',
+                    'inactive': core.status === 'inactive',
+                    'unknown': core.status === 'unknown'}"
+        (click)="getOneCore(core.core_serial)">
+      <ion-item href="http://localhost:8100/menu/cores/details/{{core.core_serial}}">
+        <ion-label>
+          <h2>{{ core.core_serial }}</h2>
+          <p>{{ core.status }}</p>
+        </ion-label>
+        <ion-note slot="end">
+          <p>{{ core.original_launch | date: 'dd/MM/yyyy'}}</p>
+          <p>{{  core.original_launch | date: 'hh : mm : ss' }}</p>
+        </ion-note>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
