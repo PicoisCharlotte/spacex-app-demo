@@ -3,7 +3,7 @@
 
 /** Ionic CSS Variables **/
 :root {
-  --ion-font-family: 'DinoFont';
+  --ion-font-family: 'OrbitronRegular';
 
    /** primary **/
    --ion-color-primary: #303F9F;
@@ -14,7 +14,7 @@
    --ion-color-primary-tint: #4552a9;
  
    /** secondary **/
-   --ion-color-secondary: #039be5; //#0cd1e8;
+   --ion-color-secondary: #0cd1e8;
    --ion-color-secondary-rgb: 63,81,181;
    --ion-color-secondary-contrast: #ffffff;
    --ion-color-secondary-contrast-rgb: 255,255,255;
@@ -54,12 +54,12 @@
    --ion-color-danger-tint: #f5564a;
  
    /** dark **/
-    --ion-color-dark: #212121;
+  --ion-color-dark: #006064;
    --ion-color-dark-rgb: 33,33,33;
    --ion-color-dark-contrast: #ffffff;
    --ion-color-dark-contrast-rgb: 255,255,255;
-   --ion-color-dark-shade: #1d1d1d;
-   --ion-color-dark-tint: #373737;
+   --ion-color-dark-shade: #005662;
+   --ion-color-dark-tint: #00838f;
  
    /** medium **/
    --ion-color-medium: #757575;
@@ -69,7 +69,6 @@
    --ion-color-medium-shade: #676767;
    --ion-color-medium-tint: #838383;
  
- 
    /** light **/
    --ion-color-light: #f4f5f8;
    --ion-color-light-rgb: 244,244,244;
@@ -77,6 +76,35 @@
    --ion-color-light-contrast-rgb: 0,0,0;
    --ion-color-light-shade: #d7d8da;
    --ion-color-light-tint: #f5f6f9;
+
+  
+  }
+
+.ion-color-cyanLight {
+  --ion-color-cyanLight: #00bcd4;
+  --ion-color-cyanLight-rgb: 244,244,244;
+  --ion-color-cyanLight-contrast: #000000;
+  --ion-color-cyanLight-contrast-rgb: 0,0,0;
+  --ion-color-cyanLight-shade: #26c6da;
+  --ion-color-cyanLight-tint: #4dd0e1;
+}
+
+.ion-color-cyan {
+  --ion-color-cyan: #00838f;
+  --ion-color-cyan-rgb: 244,244,244;
+  --ion-color-cyan-contrast: #000000;
+  --ion-color-cyan-contrast-rgb: 0,0,0;
+  --ion-color-cyan-shade: #0097a7;
+  --ion-color-cyan-tint: #00acc1;
+}
+
+.ion-color-cyanDark {
+  --ion-color-cyanDark: #006064;
+  --ion-color-cyanDark-rgb: 244,244,244;
+  --ion-color-cyanDark-contrast: #000000;
+  --ion-color-cyanDark-contrast-rgb: 0,0,0;
+  --ion-color-cyanDark-shade: #005662;
+  --ion-color-cyanDark-tint: #00838f;
 }
 
 @font-face {
@@ -84,4 +112,67 @@
   font-style: normal;
   font-weight: normal;
   src: url('../assets/fonts/PFDinMono.ttf');
+}
+
+@font-face {
+  font-family: 'LemonadaRegular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Lemonada/Lemonada-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'LemonadaLight';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Lemonada/Lemonada-Light.ttf');
+}
+
+@font-face {
+  font-family: 'LemonadaBold';
+  font-style: bold;
+  font-weight: bold;
+  src: url('../assets/fonts/Lemonada/Lemonada-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'OrbitronRegular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Orbitron/Orbitron-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OrbitronBlack';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Orbitron/Orbitron-Black.ttf');
+}
+
+@font-face {
+  font-family: 'OrbitronBold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/Orbitron/Orbitron-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'QuanticoRegular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Quantico/Quantico-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'QuanticoItalic';
+  font-style: italic;
+  font-weight: normal;
+  src: url('../assets/fonts/Quantico/Quantico-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'QuanticoBoldItalic';
+  font-style: italic;
+  font-weight: bold;
+  src: url('../assets/fonts/Quantico/Quantico-BoldItalic.ttf');
 }
