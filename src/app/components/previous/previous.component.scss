@@ -1,0 +1,17 @@
+#back {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#easter-eggs {
+  animation: spinAround 2s linear infinite;
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

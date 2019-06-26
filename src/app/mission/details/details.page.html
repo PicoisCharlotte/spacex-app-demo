@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-toolbar color="secondary">
+		<ion-button slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-button>
+		<ion-title>Mission Detail</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<app-skeleton *ngIf="!mission"></app-skeleton>
+	<app-previous></app-previous>
+	<div *ngIf="mission">
+		<ion-label>
+			<h1>{{ mission.mission_name }}</h1>
+			<h2 id="manufacturer"><b>Manufacturer</b> : {{ mission.manufacturers }}</h2>
+			<h2>{{ mission.description }}</h2>
+			<div id="wrapper">
+				<div id="urls">
+					<p>Click to learn more</p>
+					<input id="wikiLogo" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="redirectToWiki()">
+					<input id="twitterLogo" type="image" src="../../../assets/img/twitterLogo.png" (click)="redirectToTwitter()">
+					<input id="websiteLogo" type="image" src="../../../assets/img/websiteLogo.png" (click)="redirectToWebsite()">
+				</div>
+				<div id="payloads">
+					<p>Relative payloads</p>
+					<div *ngFor="let payload of missionPayloadIds">
+						<input id="payloadLabel" type="button" (click)="redirectToSearchPayloadByIdPage(payload)" value="{{ payload }}">
+					</div>
+				</div>
+			</div>
+		</ion-label>
+	</div>
+</ion-content>

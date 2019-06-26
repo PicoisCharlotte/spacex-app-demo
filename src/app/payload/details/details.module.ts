@@ -5,14 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MissionPage } from './mission.page';
-import { ComponentsModule } from '../modules/components/components.module';
+import { DetailsPage } from './details.page';
+import { ComponentsModule } from '../../modules/components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: MissionPage
-  },
+    component: DetailsPage
+  }
 ];
 
 @NgModule({
@@ -23,6 +23,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [MissionPage]
+  declarations: [DetailsPage]
 })
-export class MissionPageModule {}
+export class DetailsPageModule {}

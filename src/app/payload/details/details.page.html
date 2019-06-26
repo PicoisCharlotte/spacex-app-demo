@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>Payload Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!payload"></app-skeleton>
+  <app-previous></app-previous>
+  <div *ngIf="payload">
+    <h1>{{ payload.payload_id }}</h1>
+  </div>
+  <div *ngIf="payload.payload_mass_kg || payload.payload_mass_lbs">
+    <ion-label slot="end">
+      <p>Mass:  {{ payload.payload_mass_kg }}kg ({{ payload.payload_mass_lbs }}lbs) </p>
+    </ion-label>
+  </div>
+  <p><b>Manufacturer : {{ payload.manufacturer }}</b></p>
+  <p>Type : {{ payload.payload_type }}</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Orbit</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ payload.orbit }}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Orbit parameters</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="payload.orbit_params.reference_system">
+      <ion-card-subtitle><b>Reference system</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.reference_system }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.regime">
+      <ion-card-subtitle><b>Regime</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.regime }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.longitude">
+      <ion-card-subtitle><b>Longitude</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.longitude }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.semi_major_axis_km">
+      <ion-card-subtitle><b>Semi major axis km</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.semi_major_axis_km }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.eccentricity">
+      <ion-card-subtitle><b>Eccentricity</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.eccentricity }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.periapsis_km">
+      <ion-card-subtitle><b>Periapsis km</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.periapsis_km }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.apoapsis_km">
+      <ion-card-subtitle><b>Apoapsis km</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.apoapsis_km }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.inclination_deg">
+      <ion-card-subtitle><b>Inclination deg</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.inclination_deg }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.period_min">
+      <ion-card-subtitle><b>Period min</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.period_min }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.lifespan_years">
+      <ion-card-subtitle><b>Lifespan years</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.lifespan_years }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.epoch">
+      <ion-card-subtitle><b>Epoch</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.epoch }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.mean_motion">
+      <ion-card-subtitle><b>Mean motion</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.mean_motion }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.raan">
+      <ion-card-subtitle><b>Raan</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.raan }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.arg_of_pericenter">
+      <ion-card-subtitle><b>Arg of pericenter</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.arg_of_pericenter }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="payload.orbit_params.mean_anomaly">
+      <ion-card-subtitle><b>Mean anomaly</b></ion-card-subtitle>
+      <ion-label>{{ payload.orbit_params.mean_anomaly }}</ion-label>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

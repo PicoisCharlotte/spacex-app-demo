@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Payloads</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!payloads"></app-skeleton>
+  <ion-list>
+    <ion-item-group *ngFor="let payload of payloads"
+    class="ion-activatable" (click)="getOnePayload(payload.payload_id)">
+      <ion-item-divider>
+        <ion-item href="http://localhost:8100/menu/payloads/details/{{ payload.payload_id }}">
+          <ion-label>
+            <h2 id="payloadId">{{ payload.payload_id }}</h2>
+            <ion-label *ngFor="let customer of payload.customers">
+              {{ customer }}
+            </ion-label>
+          </ion-label>
+        </ion-item>
+        <ion-label slot="end">
+          <img class="flag-country" *ngIf="payload.nationality" src='../../assets/icon/{{ payload.nationality }}.png' title="{{ payload.nationality }}">
+          <img class="flag-country" *ngIf="!payload.nationality" src="../../assets/icon/cat.png" title="Not found">
+        </ion-label>
+      </ion-item-divider>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

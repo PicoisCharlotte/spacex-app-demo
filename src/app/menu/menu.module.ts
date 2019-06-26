@@ -27,17 +27,29 @@ const routes: Routes = [
         loadChildren: '../details/details.module#DetailsPageModule'
       },
       {
-        path: 'launches', 
+        path: 'launches',
         loadChildren: '../all-launches/all-launches.module#AllLaunchesPageModule'
       },
       {
         path: 'launches/details/:launchId',
         loadChildren: '../details/details.module#DetailsPageModule'
       },
-      { 
-        path: 'mission', 
-        loadChildren: '../mission/mission.module#MissionPageModule' 
+      {
+        path: 'missions',
+        loadChildren: '../mission/mission.module#MissionPageModule'
       },
+      {
+        path: 'missions/details/:missionId',
+        loadChildren: '../mission/details/details.module#DetailsModule'
+      },
+      {
+        path: 'payloads',
+        loadChildren: '../payload/payload.module#PayloadPageModule'
+      },
+      {
+        path: 'payloads/details/:payloadId',
+        loadChildren: '../payload/details/details.module#DetailsPageModule'
+      }
     ]
   }
 ];
