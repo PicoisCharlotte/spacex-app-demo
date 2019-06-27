@@ -5,6 +5,7 @@
       </ion-buttons>
       <ion-title>Lancements à venir</ion-title>
     </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." (search)="filterUpComing($event)"></ion-searchbar>
   </ion-header>
   <ion-content>
       <app-skeleton *ngIf="!upcomings"></app-skeleton>
@@ -29,6 +30,10 @@
                 <ion-icon slot="icon-only" name="star"></ion-icon>
               </ion-item-option>
             </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding *ngIf="upcomings.length < 1">
+          <h2 padding>Aïe \(>_<)/ </h2>
         </ion-item-sliding>
       </ion-list>
 

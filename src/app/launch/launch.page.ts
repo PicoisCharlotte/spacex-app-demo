@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Launch } from './../Models/launch.model';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { forEach } from '@angular/router/src/utils/collection';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-launch',
@@ -15,11 +17,9 @@ export class LaunchPage implements OnInit {
   oneLaunch: Launch;
   observableLaunches: Observable<Launch[]>;
 
-  constructor(private launchService: LaunchService, public navCtrl: NavController) { }
+  textInput: string;
 
-  private getLaunchId(): string {
-    return window.location.pathname.split("/").pop();
-  }
+  constructor(private launchService: LaunchService, public navCtrl: NavController) { }
 
   ngOnInit() {
     this.launchService.getLaunches().subscribe(result => {
@@ -34,10 +34,30 @@ export class LaunchPage implements OnInit {
     }, 2000);
   }
 
+  private getLaunchId(): string {
+    return window.location.pathname.split("/").pop();
+  }
+
   buttonClick(launchId: string) {
     //console.log(launchId);
     this.launchService.getOneLaunch(launchId).subscribe(result => {
       this.oneLaunch = result;
+    });
+  }
+
+  filterLaunch(event) {
+    let val = event.target.value;
+    this.launchService.getLaunches().subscribe(result => {
+      this.launches = result;
+  
+      console.log(this.launches.length);   
+  
+      if (val && val.trim() != '') {
+        this.launches = this.launches.filter((item) => {
+          return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        })
+        console.log(this.launches.length); 
+      }
     });
   }
 }

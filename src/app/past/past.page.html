@@ -5,6 +5,7 @@
       </ion-buttons>
       <ion-title>Anciens Lancements</ion-title>
     </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." (search)="filterPast($event)"></ion-searchbar>
   </ion-header>
   <ion-content>
       <app-skeleton *ngIf="!pasts"></app-skeleton>
@@ -30,6 +31,9 @@
               </ion-item-option>
             </ion-item-options>
         </ion-item-sliding>
-      </ion-list>
 
+        <ion-item-sliding *ngIf="pasts.length < 1">
+          <h2 padding>Ouups \(>_<)/ </h2>
+        </ion-item-sliding>
+      </ion-list>
 </ion-content>

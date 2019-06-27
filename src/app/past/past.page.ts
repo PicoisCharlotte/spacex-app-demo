@@ -27,4 +27,20 @@ export class PastPage implements OnInit {
   buttonClick(pastId: string) {
     console.log(pastId);
   }
+
+  filterPast(event) {
+    let val = event.target.value;
+    this.pastService.getPasts().subscribe(result => {
+      this.pasts = result;
+  
+      console.log(this.pasts.length);   
+  
+      if (val && val.trim() != '') {
+        this.pasts = this.pasts.filter((item) => {
+          return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        })
+        console.log(this.pasts.length); 
+      }
+    });
+  }
 }

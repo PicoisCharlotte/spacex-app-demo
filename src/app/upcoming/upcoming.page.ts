@@ -15,16 +15,32 @@ export class UpcomingPage implements OnInit {
   constructor(private upcomingService: UpComingService) { }
 
   ngOnInit() {
-    this.upcomingService.getLaunches().subscribe(result => {
+    this.upcomingService.getUpComing().subscribe(result => {
       this.upcomings = result;
     });
 
     setTimeout(() => {
-      this.observableUpComing = this.upcomingService.getLaunches();
+      this.observableUpComing = this.upcomingService.getUpComing();
     }, 2000);
   }
 
   buttonClick(upComingId: string) {
     console.log(upComingId);
+  }
+
+  filterUpComing(event) {
+    let val = event.target.value;
+    this.upcomingService.getUpComing().subscribe(result => {
+      this.upcomings = result;
+  
+      console.log(this.upcomings.length);   
+  
+      if (val && val.trim() != '') {
+        this.upcomings = this.upcomings.filter((item) => {
+          return (item.mission_name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        })
+        console.log(this.upcomings.length); 
+      }
+    });
   }
 }
