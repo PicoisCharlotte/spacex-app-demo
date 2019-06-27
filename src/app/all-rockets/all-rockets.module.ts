@@ -5,13 +5,28 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DetailsPage } from './details.page';
+import { AllRocketsPage } from './all-rockets.page';
 import { ComponentsModule } from '../modules/components/components.module';
 
 const routes: Routes = [
   {
+    path: 'all',
+    component: AllRocketsPage,
+    children: [
+      {
+        path: 'rocket', 
+        loadChildren: '../rocket/rocket.module#RocketPageModule'
+      },
+      { 
+        path: 'tab2', 
+        loadChildren: '../tab2/tab2.module#Tab2PageModule' 
+      }
+    ]
+  },
+  {
     path: '',
-    component: DetailsPage
+    redirectTo: 'all/rocket',
+    pathMatch: 'full'
   }
 ];
 
@@ -23,6 +38,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DetailsPage]
+  declarations: [AllRocketsPage]
 })
-export class DetailsPageModule {}
+export class AllRocketsPageModule {}

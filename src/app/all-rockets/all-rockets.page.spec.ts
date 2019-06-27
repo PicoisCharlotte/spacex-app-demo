@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FirstWithTabsPage } from './first-with-tabs.page';
+import { AllRocketsPage } from './all-rockets.page';
 
-describe('FirstWithTabsPage', () => {
-  let component: FirstWithTabsPage;
-  let fixture: ComponentFixture<FirstWithTabsPage>;
+describe('RocketPage', () => {
+  let component: AllRocketsPage;
+  let fixture: ComponentFixture<AllRocketsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirstWithTabsPage ],
+      declarations: [ AllRocketsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FirstWithTabsPage);
+    fixture = TestBed.createComponent(AllRocketsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

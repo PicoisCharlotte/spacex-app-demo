@@ -1,4 +1,3 @@
-import { DetailsPage } from './../details/details.page';
 import { LaunchService } from './../services/launch.service';
 import { Observable } from 'rxjs';
 import { Launch } from './../Models/launch.model';

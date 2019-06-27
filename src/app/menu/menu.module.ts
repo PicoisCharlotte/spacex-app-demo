@@ -19,12 +19,8 @@ const routes: Routes = [
         loadChildren: '../home/home.module#HomePageModule'
       },
       {
-        path: 'first',
-        loadChildren: '../first-with-tabs/first-with-tabs.module#FirstWithTabsPageModule'
-      },
-      {
-        path: 'second/details',
-        loadChildren: '../details/details.module#DetailsPageModule'
+        path: 'rockets',
+        loadChildren: '../all-rockets/all-rockets.module#AllRocketsPageModule'
       },
       {
         path: 'launches',
@@ -32,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'launches/details/:launchId',
-        loadChildren: '../details/details.module#DetailsPageModule'
+        loadChildren: '../launch/details/details.module#DetailsPageModule'
       },
       {
         path: 'missions',

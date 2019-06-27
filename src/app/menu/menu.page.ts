@@ -28,7 +28,7 @@ export class MenuPage implements OnInit {
     },
     {
       title: 'Rockets',
-      url: '/menu/first',
+      url: '/menu/rockets',
       icon: '/assets/icon/menu/rocket.png'
     },
     {

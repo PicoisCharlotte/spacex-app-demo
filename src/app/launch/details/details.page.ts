@@ -1,5 +1,5 @@
-import { LaunchService } from './../services/launch.service';
-import { Launch } from './../Models/launch.model';
+import { Launch } from './../../Models/launch.model';
+import { LaunchService } from './../../services/launch.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavParams } from '@ionic/angular';
