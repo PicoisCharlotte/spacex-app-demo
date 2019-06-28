@@ -12,20 +12,36 @@
   <app-previous></app-previous>
   <div id="content" *ngIf="core">
     <ion-label>
-      <h1>{{ core.core_serial }}</h1>
-      <p>{{ core.status }}</p>
-      <p>{{ core.details }}</p>
-      <p>Relative missions</p>
-      <div *ngFor="let mission of coreMissionIds">
-        <p id="missionLabel">{{ mission.name }}</p>
+      <div class="wrapper">
+        <div class="left-part">
+          <h1>{{ core.core_serial }}</h1>
+        </div>
+        <div class="right-part">
+          <p [ngClass]="{'active': core.status === 'active',
+                    'lost': core.status === 'lost',
+                    'inactive': core.status === 'inactive',
+                    'unknown': core.status === 'unknown'}">{{ core.status }}</p>
+        </div>
       </div>
-      <p>Water landing :</p>
-      <div id="waterlanding" *ngIf="waterlanding">
-        <img src="../../../assets/icon/menu/waterlanding.png">
+      <div>
+        <p>{{ core.details }}</p>
       </div>
-      <div id="nowaterlanding" *ngIf="!waterlanding">
-        <img src="../../../assets/icon/menu/nope.png">
+      <div class="wrapper">
+        <div class="left-part">
+          <p><b>Relative missions</b></p>
+        </div>
+        <div class="right-part" *ngFor="let mission of coreMissionIds">
+          <p id="missionLabel">{{ mission.name }}</p>
+        </div>
+
       </div>
+        <p><b>Water landing :</b></p>
+        <div id="waterlanding" *ngIf="waterlanding">
+          <img src="../../../assets/icon/menu/waterlanding.png">
+        </div>
+        <div id="nowaterlanding" *ngIf="!waterlanding">
+          <img src="../../../assets/icon/menu/nope.png">
+        </div>
     </ion-label>
   </div>
 </ion-content>
