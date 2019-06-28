@@ -22,8 +22,8 @@
           <p>{{ core.status }}</p>
         </ion-label>
         <ion-note slot="end">
-          <p>{{ core.original_launch | date: 'dd/MM/yyyy'}}</p>
-          <p>{{  core.original_launch | date: 'hh : mm : ss' }}</p>
+          <p class="core-date">{{ core.original_launch | date: 'dd/MM/yyyy'}}</p>
+          <p class="core-date">{{ core.original_launch | date: 'hh : mm : ss' }}</p>
         </ion-note>
       </ion-item>
     </ion-item-sliding>

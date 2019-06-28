@@ -26,12 +26,12 @@ export class MenuPage implements OnInit {
       url: '/menu/payloads',
       icon: '/assets/icon/menu/payload.png'
     },
-    {
+      {
       title: 'Rockets',
       url: '/menu/rockets',
       icon: '/assets/icon/menu/rocket.png'
     },
-    {
+      {
       title: 'Départs',
       url: '/menu/launches',
       icon: '/assets/icon/menu/cal.png'
@@ -40,6 +40,23 @@ export class MenuPage implements OnInit {
       title: 'Core',
       url: '/menu/cores',
       icon: '/assets/icon/menu/core.png'
+      // children: [
+      //     {
+      //       title: 'All cores',
+      //       url: '/menu/cores',
+      //       icon: '/assets/icon/menu/coreTopMenu.png'
+      //     },
+      //     {
+      //       title: 'Upcoming',
+      //       url: '/menu/cores/upcoming',
+      //       icon: '/assets/icon/menu/upcoming.png'
+      //     },
+      //     {
+      //       title: 'Past',
+      //       url: '/menu/cores/past',
+      //       icon: 'rewind'
+      //     }
+      // ]
     }
   ];
   constructor(

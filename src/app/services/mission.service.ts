@@ -8,6 +8,8 @@ import {map} from 'rxjs/operators';
     providedIn: 'root'
 })
 export class MissionService {
+    missions: Observable<Mission[]>;
+
     private readonly apiBaseUrl: string;
 
     constructor(private http: HttpClient) {
@@ -32,5 +34,24 @@ export class MissionService {
                 return mission;
             })
         );
+    }
+
+    getMissionByName(name: string): string{
+        this.missions = this.getMissions();
+
+        console.log('this.missions : ', this.missions);
+
+        for(let mission in this.missions) {
+            console.log(mission);
+            if(mission == name) {
+                console.log(mission);
+
+                return mission;
+            }
+        }
+       // const requestEndPoint = this.apiBaseUrl + 'missions/'
+    }
+    test() {
+        console.log("test");
     }
 }

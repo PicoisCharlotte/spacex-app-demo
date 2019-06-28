@@ -11,11 +11,21 @@ const routes: Routes = [
   {
     path: 'all',
     component: AllCoresPage,
-    /*children: [
+    children: [
         {
           path: 'core',
+          loadChildren: '../core.module#CorePageModule'
+        },
+        {
+          path: 'upcoming',
+          loadChildren: '../../upcoming/upcoming.module#UpcomingPageModule'
+        },
+        {
+          path: 'past',
+          loadChildren: '../../past/past.module#PastPageModule'
         }
-    ]*/
+
+    ]
   }
 ];
 

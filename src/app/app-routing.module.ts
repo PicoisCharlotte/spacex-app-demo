@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'core', loadChildren: './core/core.module#CorePageModule' },
   { path: 'all-cores', loadChildren: './core/all-cores/all-cores.module#AllCoresPageModule' },
+  { path: 'upcoming', loadChildren: './core/upcoming/upcoming.module#UpcomingPageModule' },
+  { path: 'past', loadChildren: './core/past/past.module#PastPageModule' },
+  { path: 'details', loadChildren: './core/details/details.module#DetailsPageModule' },
 ];
 
 @NgModule({
