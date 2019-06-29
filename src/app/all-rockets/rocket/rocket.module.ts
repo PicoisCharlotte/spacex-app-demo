@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RocketPage } from './rocket.page';
-import { ComponentsModule } from '../modules/components/components.module';
+import { ComponentsModule } from '../../modules/components/components.module';
 
 const routes: Routes = [
   {

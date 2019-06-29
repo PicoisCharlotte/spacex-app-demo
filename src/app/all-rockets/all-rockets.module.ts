@@ -15,11 +15,11 @@ const routes: Routes = [
     children: [
       {
         path: 'rocket', 
-        loadChildren: '../rocket/rocket.module#RocketPageModule'
+        loadChildren: '../all-rockets/rocket/rocket.module#RocketPageModule'
       },
       { 
         path: 'tab2', 
-        loadChildren: '../tab2/tab2.module#Tab2PageModule' 
+        loadChildren: '../all-rockets/tab2/tab2.module#Tab2PageModule' 
       }
     ]
   },
