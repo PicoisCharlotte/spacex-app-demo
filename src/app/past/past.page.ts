@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./past.page.scss'],
 })
 export class PastPage implements OnInit {
+  searchTerm: string;
   pasts: Past[];
   observablePast: Observable<Past[]>;
 
@@ -28,8 +29,8 @@ export class PastPage implements OnInit {
     console.log(pastId);
   }
 
-  filterPast(event) {
-    let val = event.target.value;
+  valueChanged() {
+    let val = this.searchTerm;
     this.pastService.getPasts().subscribe(result => {
       this.pasts = result;
   

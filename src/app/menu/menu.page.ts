@@ -27,12 +27,12 @@ export class MenuPage implements OnInit {
       icon: '/assets/icon/menu/payload.png'
     },
     {
-      title: 'Rockets',
+      title: 'Rockets / Roadster',
       url: '/menu/rockets',
       icon: '/assets/icon/menu/rocket.png'
     },
     {
-      title: 'Départs',
+      title: 'Launches',
       url: '/menu/launches',
       icon: '/assets/icon/menu/cal.png'
     },

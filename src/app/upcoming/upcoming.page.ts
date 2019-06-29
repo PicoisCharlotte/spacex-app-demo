@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
   templateUrl: './upcoming.page.html',
   styleUrls: ['./upcoming.page.scss'],
 })
+
 export class UpcomingPage implements OnInit {
+  searchTerm: string;
   upcomings: UpComing[];
   observableUpComing: Observable<UpComing[]>;
 
@@ -28,8 +30,8 @@ export class UpcomingPage implements OnInit {
     console.log(upComingId);
   }
 
-  filterUpComing(event) {
-    let val = event.target.value;
+  valueChanged() {
+    let val = this.searchTerm;
     this.upcomingService.getUpComing().subscribe(result => {
       this.upcomings = result;
   

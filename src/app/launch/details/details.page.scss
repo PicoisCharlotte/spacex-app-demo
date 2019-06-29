@@ -1,0 +1,46 @@
+#previousLink {
+    margin-left: 10px; 
+    color: rgb(95, 93, 93);
+    cursor: pointer;
+}
+
+#patchImg {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 30%;
+    top: 100px;
+}
+
+#header {
+    background-color: rgba(243, 255, 134, 0.5);
+    border-bottom: 1px grey solid;
+
+    #title {
+        text-align: center;
+        font-family: "OrbitronBold";
+        font-size: 2em;
+    }
+}
+
+ion-img {
+    display: inline-block;
+}
+
+#urls {
+    #article {
+        width: 10%;
+        padding-left: 2%;
+        padding-bottom: 3px;
+    }
+    #wikipedia {
+        width: 11%;
+        //padding-bottom: 7px;
+        padding-left: 2%;
+    }
+    #video {
+        width: 10%;
+        padding-left: 9px;
+        margin-left: 7px;
+    }
+}

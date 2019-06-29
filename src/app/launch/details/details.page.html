@@ -7,23 +7,73 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-item>
+      <ion-icon (click)="previousPage()" name="arrow-round-back"></ion-icon>
+      <a id="previousLink" (click)="previousPage()">Back</a>
+  </ion-item>
   <app-skeleton *ngIf="!launch"></app-skeleton>
     <!-- <ion-item *ngFor="let l of launch">
         <ion-label>{{ l.details }}</ion-label>
     </ion-item> -->
     <!-- {{launch | json }} -->
-    <div *ngIf="launch" > 
-      <ion-thumbnail slot="start">
+    <div *ngIf="launch"> 
+      <ion-thumbnail id="patchImg" slot="start" style="position: relative;">
         <ion-skeleton-text *ngIf="!launch.links.mission_patch"></ion-skeleton-text>
         <img *ngIf="launch.links.mission_patch" [src]="launch.links.mission_patch">
       </ion-thumbnail>
-      <ion-label>
-        <h2>{{launch.mission_name}}</h2>
-        <p>{{launch.launch_site.site_name_long}}</p>
-        <p>{{launch.rocket.rocket_name}}</p>
-      </ion-label>
-      <ion-note slot="end">
-        {{launch.launch_year}}
-      </ion-note>
+
+      <ion-card>
+        <ion-card-header id="header">
+          <ion-card-title id="title">{{launch.mission_name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row style="margin: 5px 0 5px 0;">
+              <ion-col size="1"></ion-col>
+              <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Rocket Mission</ion-col>
+              <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Launch Site</ion-col>
+              <ion-col size="1"></ion-col>
+            </ion-row>
+            <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+              <ion-col size="2" style="padding-top: 10px; text-align: right;">Name:<br>Type: </ion-col>
+              <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                  {{launch.rocket.rocket_name}}<br>{{launch.rocket.rocket_type}}
+              </ion-col>
+              <ion-col size="7" style="line-height: 50px; text-align: center;color: black;">
+                {{launch.launch_site.site_name_long}}
+              </ion-col>
+              <ion-col size="1"></ion-col>
+            </ion-row>
+            <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+              <ion-col size="2" style="padding-top: 10px; text-align: right;">
+                Nationality: <br>Manufacturer: <br> Payload type: <br> Orbit: 
+              </ion-col>
+              <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;" *ngFor="let elem of launch.rocket.second_stage.payloads">
+                  {{elem.nationality}}<br>
+                  {{elem.manufacturer}}<br>
+                  {{elem.payload_type}}<br>
+                  {{elem.orbit}}
+              </ion-col>
+              <ion-col size="7"></ion-col>
+            </ion-row>
+            <ion-row style="margin: 5px 0 5px 0;">
+                <ion-col size="1"></ion-col>
+                <ion-col size="10" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Internet Links</ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+            <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="8" style="padding-top: 10px; text-align: center;">
+                  <div id="urls">
+                    <ion-img id="article" type="image"  src="../../../assets/img/www.png" (click)="urlArticle()"></ion-img>
+                    <ion-img id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
+                    <ion-img id="video" type="image" src="../../../assets/img/youtube.svg" (click)="urlVideo()"></ion-img>
+                  </div>
+                </ion-col>
+                <ion-col size="2"></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
     </div>
 </ion-content>

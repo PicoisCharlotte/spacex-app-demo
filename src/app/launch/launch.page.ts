@@ -12,6 +12,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./launch.page.scss'],
 })
 export class LaunchPage implements OnInit {
+  searchTerm: string;
   launches: Launch[];
   oneLaunch: Launch;
   observableLaunches: Observable<Launch[]>;
@@ -44,8 +45,8 @@ export class LaunchPage implements OnInit {
     });
   }
 
-  filterLaunch(event) {
-    let val = event.target.value;
+  valueChanged() {
+    let val = this.searchTerm;
     this.launchService.getLaunches().subscribe(result => {
       this.launches = result;
   

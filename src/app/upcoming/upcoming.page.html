@@ -5,7 +5,7 @@
       </ion-buttons>
       <ion-title>Lancements à venir</ion-title>
     </ion-toolbar>
-    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." (search)="filterUpComing($event)"></ion-searchbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." [(ngModel)]="searchTerm" (ionChange)="valueChanged()"></ion-searchbar>
   </ion-header>
   <ion-content>
       <app-skeleton *ngIf="!upcomings"></app-skeleton>
