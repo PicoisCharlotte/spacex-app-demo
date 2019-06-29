@@ -1,6 +1,6 @@
-import { LaunchService } from './../services/launch.service';
+import { LaunchService } from './../../services/launch.service';
 import { Observable } from 'rxjs';
-import { Launch } from './../Models/launch.model';
+import { Launch } from './../../Models/launch.model';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { forEach } from '@angular/router/src/utils/collection';

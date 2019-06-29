@@ -1,5 +1,5 @@
-import { UpComingService } from './../services/upcoming.service';
-import { UpComing } from './../Models/upcoming.model';
+import { UpComingService } from './../../services/upcoming.service';
+import { UpComing } from './../../Models/upcoming.model';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 

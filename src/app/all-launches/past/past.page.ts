@@ -1,5 +1,5 @@
-import { PastService } from './../services/past.service';
-import { Past } from './../Models/past.model';
+import { PastService } from './../../services/past.service';
+import { Past } from './../../Models/past.model';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
