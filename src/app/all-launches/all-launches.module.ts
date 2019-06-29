@@ -14,15 +14,15 @@ const routes: Routes = [
     children: [
       {
         path: 'launch',
-        loadChildren: '../launch/launch.module#LaunchPageModule'
+        loadChildren: './launch/launch.module#LaunchPageModule'
       },
       {
         path: 'upcoming', 
-        loadChildren: '../upcoming/upcoming.module#UpcomingPageModule'
+        loadChildren: './upcoming/upcoming.module#UpcomingPageModule'
       },
       { 
         path: 'past', 
-        loadChildren: '../past/past.module#PastPageModule' 
+        loadChildren: './past/past.module#PastPageModule' 
       }
     ]
   },

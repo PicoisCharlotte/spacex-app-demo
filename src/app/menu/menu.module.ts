@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'launches/details/:launchId',
-        loadChildren: '../launch/details/details.module#DetailsPageModule'
+        loadChildren: '../all-launches/launch/details/details.module#DetailsPageModule'
       },
       {
         path: 'missions',
