@@ -17,7 +17,7 @@ const routes: Routes = [
           loadChildren: '../core.module#CorePageModule'
         },
         {
-          path: 'upcoming',
+          path: 'core-upcoming',
           loadChildren: '../../upcoming/upcoming.module#UpcomingPageModule'
         },
         {
@@ -26,7 +26,12 @@ const routes: Routes = [
         }
 
     ]
-  }
+  },
+    {
+        path: '',
+        redirectTo: 'all/cores',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({
