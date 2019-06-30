@@ -17,18 +17,9 @@ export class AllDragonsPage implements OnInit {
   constructor(private dragonService: DragonService) { }
 
   ngOnInit() {
-    /*this.dragonService.getDragons().subscribe(result => {
-      this.dragons = result;
-    });
-
-    setTimeout(() => {
-      this.observableDragons = this.dragonService.getDragons();
-    }, 2000);*/
     this.observableDragons = this.dragonService.getDragons();
-    console.log(this.observableDragons);
   }
   getOneDragon(id: string) {
-    console.log("DRAGON : " + id);
     this.dragonService.getOneDragon(id).subscribe(result => {
       this.dragon = result;
     });

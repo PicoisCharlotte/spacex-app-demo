@@ -65,6 +65,22 @@ const routes: Routes = [
       {
         path: 'dragons/dragon/:dragonId',
         loadChildren: '../dragon/dragon.module#DragonPageModule'
+      },
+      {
+        path: 'capsules',
+        loadChildren: '../capsules/capsules.module#CapsulesPageModule'
+      },
+      {
+        path: 'capsules/capsule/:capsuleSerial',
+        loadChildren: '../capsules/details/details.module#DetailsPageModule'
+      },
+      {
+        path: 'ships',
+        loadChildren: '../ships/ships.module#ShipsPageModule'
+      },
+      {
+        path: 'ships/ship/:shipId',
+        loadChildren: '../ships/details/details.module#DetailsPageModule'
       }
     ]
   }
