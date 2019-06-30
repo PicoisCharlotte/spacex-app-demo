@@ -57,6 +57,11 @@ export class MenuPage implements OnInit {
       //       icon: 'rewind'
       //     }
       // ]
+    },
+    {
+      title: 'Landing Pad',
+      url: '/menu/landingPads',
+      icon: '/assets/icon/menu/landing-pads.svg'
     }
   ];
   constructor(

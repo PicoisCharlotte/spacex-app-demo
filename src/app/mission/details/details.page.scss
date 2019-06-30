@@ -8,7 +8,6 @@ h2 {
 }
 
 p {
-  padding-top: 1%;
   padding-left: 2%;
   font-size: medium;
   text-decoration: underline;
@@ -30,12 +29,15 @@ p {
 #urls {
   width: 700px;
   float: left;
+  padding-left: 10px;
 }
 
 #payloads {
   width: 200px;
   float: left;
+  padding-left: 23px;
 }
+
 #wikiLogo {
   width: 9%;
   padding-left: 2%;

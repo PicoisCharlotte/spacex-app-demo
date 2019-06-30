@@ -53,6 +53,14 @@ const routes: Routes = [
       {
         path: 'cores/details/:coreSerial',
         loadChildren: '../core/details/details.module#DetailsPageModule'
+      },
+      {
+        path: 'landingPads',
+        loadChildren: '../landing-pad/landing-pad.module#LandingPadPageModule'
+      },
+      {
+        path: 'landingPads/details/:id',
+        loadChildren: '../landing-pad/details/details.module#DetailsPageModule'
       }
     ]
   }

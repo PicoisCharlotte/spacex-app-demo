@@ -35,23 +35,4 @@ export class MissionService {
             })
         );
     }
-
-    getMissionByName(name: string): string{
-        this.missions = this.getMissions();
-
-        console.log('this.missions : ', this.missions);
-
-        for(let mission in this.missions) {
-            console.log(mission);
-            if(mission == name) {
-                console.log(mission);
-
-                return mission;
-            }
-        }
-       // const requestEndPoint = this.apiBaseUrl + 'missions/'
-    }
-    test() {
-        console.log("test");
-    }
 }
