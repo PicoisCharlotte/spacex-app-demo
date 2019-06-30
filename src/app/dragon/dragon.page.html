@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dragon Détails</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-skeleton *ngIf="!dragon"></app-skeleton>
+    <div *ngIf="dragon" >
+      <ion-label>
+        <h2>{{dragon.name}}</h2>
+        <p>{{dragon.type}}</p>
+        <p>{{dragon.first_flight}}</p>
+      </ion-label>
+      <ion-note slot="end">
+        {{dragon.heat_shield.dev_partner}}
+      </ion-note>
+    </div>
+</ion-content>

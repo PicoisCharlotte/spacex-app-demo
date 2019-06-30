@@ -53,6 +53,14 @@ const routes: Routes = [
       {
         path: 'cores',
         loadChildren: '../core/core.module#CorePageModule'
+      },
+      {
+        path: 'dragons',
+        loadChildren: '../dragon/all-dragons/all-dragons.module#AllDragonsPageModule'
+      },
+      {
+        path: 'dragons/dragon/:dragonId',
+        loadChildren: '../dragon/dragon.module#DragonPageModule'
       }
     ]
   }

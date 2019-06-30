@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'core', loadChildren: './core/core.module#CorePageModule' },
   { path: 'all-cores', loadChildren: './core/all-cores/all-cores.module#AllCoresPageModule' },
+  { path: 'dragon/:idDragon', loadChildren: './dragon/dragon.module#DragonPageModule' },
+  { path: 'all-dragons', loadChildren: './dragon/all-dragons/all-dragons.module#AllDragonsPageModule' },
+
 ];
 
 @NgModule({
