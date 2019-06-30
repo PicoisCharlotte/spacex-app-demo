@@ -50,7 +50,7 @@ export class MenuPage implements OnInit {
     {
       title: 'Histories',
       url: '/menu/histories',
-      icon: '/assets/icon/menu/bell.png'
+      icon: '/assets/icon/menu/history.png'
     }
   ];
   constructor(

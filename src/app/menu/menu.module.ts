@@ -60,7 +60,7 @@ const routes: Routes = [
       },
       { 
         path: 'histories', 
-        loadChildren: './history/history.module#HistoryPageModule' 
+        loadChildren: '../history/history.module#HistoryPageModule' 
       }
     ]
   }
