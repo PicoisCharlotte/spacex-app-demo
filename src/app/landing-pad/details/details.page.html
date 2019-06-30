@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Landing Pad Detail</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <app-skeleton *ngIf="!landingPad"></app-skeleton>
+    <app-previous></app-previous>
+    <ion-grid>
+        <div id="text-content" *ngIf="landingPad">
+            <ion-row>
+                <ion-col>
+                    <ion-label>
+                        <h1>{{ landingPad.full_name }}</h1>
+                        <p [ngClass]="{'active': landingPad.status === 'active',
+                            'retired': landingPad.status === 'retired',
+                           'construct': landingPad.status === 'under construction'}">
+                            {{ landingPad.status }}</p>
+                        <h2>{{ landingPad.id }}</h2>
+                        <p>attempted : {{ landingPad.attempted_landings }}</p>
+                        <p>successful : {{ landingPad.successful_landings }}</p>
+                    </ion-label>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <p><u>Click to learn more</u></p>
+                        <input id="wikiLogo" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="redirectToWiki()">
+                    </div>
+                </ion-col>
+                <ion-card>
+                    <ion-card-content>
+                        <p>{{ landingPad.details }}</p>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-row>
+        </div>
+    </ion-grid>
+</ion-content>
+<ion-content>
+    <app-skeleton *ngIf="!landingPad"></app-skeleton>
+    <div  id="map" style="width:300px; height:300px;"></div>
+</ion-content>

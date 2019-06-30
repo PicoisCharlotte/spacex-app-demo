@@ -1,0 +1,19 @@
+.active {
+  border-left: 6px solid var(--ion-color-success);
+  margin: 0 0 2px 0;
+}
+
+.retired {
+  border-left: 6px solid #111111;
+  margin: 0 0 2px 0;
+}
+
+#construct {
+  width: 35px;
+  height: 35px;
+}
+
+#construct-note {
+  padding-right: 0;
+  margin-right: 10px;
+}
