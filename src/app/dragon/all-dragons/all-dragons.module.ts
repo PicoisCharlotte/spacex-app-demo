@@ -12,10 +12,6 @@ const routes: Routes = [
   {
     path: '',
     component: AllDragonsPage
-  },
-  {
-    path: 'dragon/:dragonId',
-    loadChildren: '../all-dragons/all-dragons.module#AllDragonsPageModule'
   }
 ];
 
