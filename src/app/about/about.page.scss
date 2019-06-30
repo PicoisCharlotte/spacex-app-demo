@@ -1,0 +1,69 @@
+#previousLink {
+    margin-left: 10px; 
+    color: rgb(95, 93, 93);
+    cursor: pointer;
+}
+
+ion-card-header {
+    background-color: black;
+    //background-image: url("../../assets/img/fond1.jpg");
+    border-bottom: 1px grey solid;
+
+    #title {
+        text-align: center;
+        font-family: "OrbitronBold";
+        font-size: 2em;
+        color: #fff;
+        padding-bottom: 10px;
+    }
+
+    ion-card-subtitle {
+        font-family: QuanticoRegular;
+        color: rgba(219, 224, 226, 0.5);
+        padding-top: 10px;
+        text-align: center;
+        font-size: 1.2em;
+        width: 50%;
+        margin-left:25%;
+    }
+}
+
+ion-img {
+    display: inline-block;
+}
+
+#project {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    padding: 5px 0 5px 0;
+
+    #descripProject {
+        font-family: QuanticoRegular;
+        font-size: 1em;
+        color: rgba(219, 224, 226, 0.5);
+        margin: 10px 0 5px 0;
+    }
+}
+
+#urls {
+    #website {
+        width: 10%;
+        padding-left: 2%;
+        padding-bottom: 3px;
+    }
+    #twitter {
+        width: 10%;
+        padding-left: 2%;
+        padding-bottom: 3px;
+    }
+    #flickr {
+        width: 11%;
+        padding-left: 2%;
+        padding-bottom: 3px;
+    }
+}

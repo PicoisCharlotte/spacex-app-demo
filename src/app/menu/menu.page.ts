@@ -40,18 +40,13 @@ export class MenuPage implements OnInit {
     {
       title: 'Launch Pads',
       url: '/menu/launchpads',
-      icon: '/assets/icon/menu/bell.png'
+      icon: '/assets/icon/menu/arrow.png'
     },
     {
       title: 'Core',
       url: '/menu/cores',
       icon: '/assets/icon/menu/core.png'
     }
-    /*{
-      title: 'About',
-      url: '/menu/info',
-      icon: '/assets/icon/menu/question.svg'
-    }*/
   ];
   constructor(
     private router: Router,

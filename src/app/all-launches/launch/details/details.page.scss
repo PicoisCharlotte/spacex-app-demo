@@ -12,6 +12,12 @@
     top: 100px;
 }
 
+#defaultImage {
+    background-image: url("../../../../assets/icon/menu/defaultImg.svg");
+    width: 10%;
+    height: 20%;  
+}
+
 #header {
     background-color: rgba(243, 255, 134, 0.5);
     border-bottom: 1px grey solid;

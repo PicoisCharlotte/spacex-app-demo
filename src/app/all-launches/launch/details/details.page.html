@@ -19,7 +19,10 @@
     <div *ngIf="launch"> 
       <ion-thumbnail id="patchImg" slot="start" style="position: relative;">
         <ion-skeleton-text *ngIf="!launch.links.mission_patch"></ion-skeleton-text>
-        <img *ngIf="launch.links.mission_patch" [src]="launch.links.mission_patch">
+        <img *ngIf="launch.links.mission_patch; else defaultImage" [src]="launch.links.mission_patch || defaultImage">
+        <ng-template #defaultImage>
+          <img src="../../../assets/img/logo.png" alt="hello"/>
+        </ng-template>
       </ion-thumbnail>
 
       <ion-card>

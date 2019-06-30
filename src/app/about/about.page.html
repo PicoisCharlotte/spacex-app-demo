@@ -1,9 +1,102 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>about</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>About</ion-title>
   </ion-toolbar>
+  <ion-item>
+      <ion-icon (click)="previousPage()" name="arrow-round-back"></ion-icon>
+      <a id="previousLink" (click)="previousPage()">Back</a>
+  </ion-item>
 </ion-header>
-
 <ion-content>
+    <div *ngIf="companyInfo"> 
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title id="title">{{companyInfo.name}} Company</ion-card-title>
+            <img style="margin-left: 47%;width: 8%; position: relative;" src="../assets/img/logo.png"/>
+            <ion-card-subtitle>{{companyInfo.summary}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row style="margin: 5px 0 5px 0;">
+                <ion-col size="1"></ion-col>
+                <ion-col size="10" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">General Informations</ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
 
+              <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+                <ion-col size="3" style="padding-top: 10px; text-align: right;">Founded :<br>By :
+                </ion-col>
+                <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                  {{companyInfo.founded}}<br>{{companyInfo.founder}}
+                </ion-col>
+                <ion-col size="2" style="padding-top: 10px; text-align: right;">Nb Employees :<br>Nb Launch Sites :<br>Nb Test Site :</ion-col>
+                <ion-col size="3" style="padding-top: 10px; text-align: center;color: black;">
+                  {{companyInfo.employees}}<br>{{companyInfo.launch_sites}}<br>{{companyInfo.test_sites}}
+                </ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+
+              <ion-row style="margin: 5px 0 5px 0;">
+                <ion-col size="1"></ion-col>
+                <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Team</ion-col>
+                <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Headquarters</ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+
+              <ion-row style="margin-bottom: 15px">
+                <ion-col size="3" style="padding-top: 10px; text-align: right;">
+                  CEO :<br>CTO :<br> COO :<br> CTO Propulsion :
+                </ion-col>
+                <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                  {{companyInfo.ceo}}<br>{{companyInfo.cto}}<br>{{companyInfo.coo}}<br>{{companyInfo.cto_propulsion}}
+                </ion-col>
+                <ion-col size="2" style="padding-top: 10px; text-align: right;">Address :<br>City :<br>State :</ion-col>
+                <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                  {{companyInfo.headquarters.address}}<br>{{companyInfo.headquarters.city}}<br>{{companyInfo.headquarters.state}}
+                </ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+
+              <ion-row id="project">
+                <ion-col size="1"></ion-col>
+                <ion-col size="10">Project : {{infoAPI.project_name}}<br><p id="descripProject">{{infoAPI.description}}</p></ion-col>
+                <ion-col size="1"></ion-col>
+              </ion-row>
+              <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+                  <ion-col size="3" style="padding-top: 10px; text-align: right;">
+                      Version :<br>Project Link :<br>Docs:
+                  </ion-col>
+                  <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                    {{infoAPI.version}}<br>{{infoAPI.project_link}}<br>{{infoAPI.docs}}
+                  </ion-col>
+                  <ion-col size="2" style="padding-top: 10px; text-align: right;">Organization :<br>Link :</ion-col>
+                  <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                    {{infoAPI.organization}}<br>{{infoAPI.organization_link}}
+                  </ion-col>
+                  <ion-col size="1"></ion-col>
+                </ion-row>
+
+              <ion-row style="margin: 5px 0 5px 0;">
+                  <ion-col size="1"></ion-col>
+                  <ion-col size="10" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Internet Links</ion-col>
+                  <ion-col size="1"></ion-col>
+                </ion-row>
+              <ion-row>
+                  <ion-col size="2"></ion-col>
+                  <ion-col size="8" style="padding-top: 10px; text-align: center;">
+                    <div id="urls">
+                      <ion-img id="website" type="image"  src="../../../assets/img/www.png" (click)="urlWebsite()"></ion-img>
+                      <ion-img id="twitter" type="image" src="../../../assets/img/twitterLogo.png" (click)="urlTwitter()"></ion-img>
+                      <ion-img id="flickr" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlFlickr()"></ion-img>
+                    </div>
+                  </ion-col>
+                  <ion-col size="2"></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </div>
 </ion-content>
