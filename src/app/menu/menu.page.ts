@@ -50,7 +50,7 @@ export class MenuPage implements OnInit {
     {
       title: 'Dragon',
       url: '/menu/dragons',
-      icon: '/assets/icon/core.png'
+      icon: '/assets/icon/dragon.png'
 
     }
     /*{

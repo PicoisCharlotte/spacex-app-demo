@@ -9,13 +9,50 @@
 <ion-content>
   <app-skeleton *ngIf="!dragon"></app-skeleton>
     <div *ngIf="dragon" >
-      <ion-label>
-        <h2>{{dragon.name}}</h2>
-        <p>{{dragon.type}}</p>
-        <p>{{dragon.first_flight}}</p>
-      </ion-label>
-      <ion-note slot="end">
-        {{dragon.heat_shield.dev_partner}}
-      </ion-note>
+      <div id="headerPage">
+        <div id="info" class="InsideContent">
+          <ion-label>
+            <h1>{{dragon.name}}</h1>
+            <p>{{dragon.type}}</p>
+            <p>{{dragon.first_flight}}</p>
+          </ion-label>
+        </div>
+        <div id="wikipedia" class="InsideContent">
+            <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="8" style="padding-top: 10px; text-align: center;">
+                  <div id="urls">
+                    <ion-img id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
+                  </div>
+                </ion-col>
+                <ion-col size="2"></ion-col>
+            </ion-row>    
+        </div>
+      </div>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Info</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>First flight : {{dragon.first_flight}}</p>
+          <p>Orbit duration : {{dragon.orbit_duration_yr}} years</p>
+          <p>Mass : {{dragon.dry_mass_kg}} kg / {{dragon.dry_mass_lb}} lb</p>
+          <p>Diameter : {{dragon.diameter.meters}} meters / {{dragon.diameter.feet}} feets</p>
+          
+          <ion-card-subtitle><b>Description</b></ion-card-subtitle>
+          <p>{{dragon.description}}</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+          <ion-card-header>
+              <ion-card-title>Heat-Shield</ion-card-title>
+            </ion-card-header>
+        <ion-card-content>
+          <p>Material : {{dragon.heat_shield.material}}</p>
+          <p>Size : {{dragon.heat_shield.size_meters}} meters</p>
+          <p>Temperature : {{dragon.heat_shield.temp_degrees}} dregrees</p>
+          <p>Partner : {{dragon.heat_shield.dev_partner}}</p>
+        </ion-card-content>
+      </ion-card>
     </div>
 </ion-content>

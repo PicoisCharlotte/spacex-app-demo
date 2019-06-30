@@ -13,6 +13,7 @@ export class DragonPage implements OnInit {
   dragons: Dragon[];
   dragon: Dragon;
   observableDragons: Observable<Dragon[]>;
+  wikipedia: string;
 
   constructor(private dragonService: DragonService) { }
 
@@ -25,10 +26,15 @@ export class DragonPage implements OnInit {
 
     this.dragonService.getOneDragon(dragonId).subscribe(result => {
       this.dragon = result;
+      this.wikipedia = result.wikipedia;
     })
 
     setTimeout(() => {
       this.observableDragons = this.dragonService.getDragons();
     }, 2000);
+  }
+  
+  urlWikipedia() {
+    window.open(this.wikipedia,'_blank');
   }
 }
