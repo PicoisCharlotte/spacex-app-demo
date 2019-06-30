@@ -11,7 +11,6 @@
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
           <ion-item color="light" [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
-            <!--<ion-icon name="{{p.icon}}" slot="start"></ion-icon>-->
             <img width="25px" height="25px" slot="start" src="{{p.icon}}"/>
             <ion-label>{{ p.title }}</ion-label>
           </ion-item>
@@ -21,6 +20,10 @@
           <ion-icon name="close" slot="start"></ion-icon>
           Logout
         </ion-item>-->
+        <ion-item tappable routerLink="/about" routerDirection="root">
+          <ion-icon name="close" slot="start"></ion-icon>
+          About
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>

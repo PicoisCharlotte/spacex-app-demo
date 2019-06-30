@@ -5,30 +5,27 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AllLaunchesPage } from './all-launches.page';
+import { AllRocketsPage } from './all-rockets.page';
+import { ComponentsModule } from '../modules/components/components.module';
 
 const routes: Routes = [
   {
     path: 'all',
-    component: AllLaunchesPage,
+    component: AllRocketsPage,
     children: [
       {
-        path: 'launch',
-        loadChildren: './launch/launch.module#LaunchPageModule'
-      },
-      {
-        path: 'upcoming', 
-        loadChildren: './upcoming/upcoming.module#UpcomingPageModule'
+        path: 'rocket', 
+        loadChildren: '../all-rockets/rocket/rocket.module#RocketPageModule'
       },
       { 
-        path: 'past', 
-        loadChildren: './past/past.module#PastPageModule' 
+        path: 'tab2', 
+        loadChildren: '../all-rockets/tab2/tab2.module#Tab2PageModule' 
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'all/launch',
+    redirectTo: 'all/rocket',
     pathMatch: 'full'
   }
 ];
@@ -38,8 +35,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AllLaunchesPage]
+  declarations: [AllRocketsPage]
 })
-export class AllLaunchesPageModule {}
+export class AllRocketsPageModule {}

@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Launch Pads</ion-title>
+    </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." [(ngModel)]="searchTerm" (ionChange)="valueChanged()"></ion-searchbar>
+  </ion-header>
+  <ion-content>
+    <app-skeleton *ngIf="!launchPads"></app-skeleton>
+    <ion-list>
+      <ion-item-sliding *ngFor="let lp of launchPads" [ngClass]="{'active': lp.status == 'active', 'retired': lp.status == 'retired','underConstruction': lp.status == 'under construction'}" class="ion-activatable" (click)="buttonClick(lp.id)">
+          <ion-item href="http://localhost:8100/menu/launchpads/details/{{lp.site_id}}">
+            <ion-label>
+              <h2>{{ lp?.details }}</h2>
+              <p>{{ lp?.vehicles_launched }}</p>
+            </ion-label>
+            <ion-note slot="end">
+              {{ lp?.status }}
+            </ion-note>
+          </ion-item>
+    
+          <ion-item-options side="end">
+            <ion-item-option color="danger">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-item-option>
+            <ion-item-option color="medium">
+              <ion-icon slot="icon-only" name="star"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding *ngIf="launchPads?.length < 1">
+        <h2 padding>Pas de résultats \(>_<)/ </h2>
+      </ion-item-sliding>
+    </ion-list>
+  
+  </ion-content>

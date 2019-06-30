@@ -1,11 +1,9 @@
 #homePage, ion-toolbar {
-    height: 100px;
     ion-title {
         text-align: center;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         font-family: "OrbitronBold";
-        margin-top: 20px;
     }
 }
 #container-body {
@@ -31,22 +29,22 @@
 
         img {
             position: absolute;
-            width: 12%;
-            height: 40%;
+            width: 15%;
+            height: 50%;
             left: 0%;
             top: 20%;
         }
 
         #imgRight {
             position: absolute;
-            width: 12%;
-            height: 40%;
-            left: 90%;
+            width: 15%;
+            height: 50%;
+            left: 85%;
             top: 20%;
         }
 
         ion-card-subtitle {
-            font-size: 0.3em;
+            font-size: 0.6em;
             color: rgba(252, 249, 209, 0.5)
         }
     }

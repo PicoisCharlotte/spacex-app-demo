@@ -1,0 +1,15 @@
+ion-searchbar {
+    background-color: rgb(131, 156, 148);
+}
+.retired {
+    border-left: 6px solid var(--ion-color-danger);
+    margin: 0px 0 2px 0;
+}
+.active {
+    border-left: 6px solid var(--ion-color-success);
+    margin: 0px 0 2px 0;
+}
+.underConstruction {
+    border-left: 6px solid var(--ion-color-warning);
+    margin: 0px 0 2px 0;
+}

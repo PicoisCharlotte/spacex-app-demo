@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Lancements à venir</ion-title>
+    </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." [(ngModel)]="searchTerm" (ionChange)="valueChanged()"></ion-searchbar>
+  </ion-header>
+  <ion-content>
+      <app-skeleton *ngIf="!upcomings"></app-skeleton>
+      <ion-list>
+        <ion-item-sliding *ngFor="let u of upcomings" [ngClass]="{'active': u.active, 'inactive': !u.active}"
+            class="ion-activatable" (click)="buttonClick(u.flight_number)">
+            <ion-item href="http://localhost:8100/menu/launches/details/{{u.flight_number}}">
+              <ion-label>
+                <h2>{{ u.mission_name }}</h2>
+                <p>{{ u.launch_site.site_name_long }}</p>
+              </ion-label>
+              <ion-note slot="end">
+                {{ u.launch_year }}
+              </ion-note>
+            </ion-item>
+      
+            <ion-item-options side="end">
+              <ion-item-option color="danger">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-item-option>
+              <ion-item-option color="medium">
+                <ion-icon slot="icon-only" name="star"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding *ngIf="upcomings?.length < 1">
+          <h2 padding>Aïe \(>_<)/ </h2>
+        </ion-item-sliding>
+      </ion-list>
+
+  </ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Launches</ion-title>
+    </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." [(ngModel)]="searchTerm" (ionChange)="valueChanged()"></ion-searchbar>
+  </ion-header>
+  <ion-content>
+    <app-skeleton *ngIf="!launches"></app-skeleton>
+    <ion-list>
+      <ion-item-sliding *ngFor="let l of launches" [ngClass]="{'active': l.active, 'inactive': !l.active}" class="ion-activatable" (click)="buttonClick(l.flight_number)">
+          <ion-item href="http://localhost:8100/menu/launches/details/{{l.flight_number}}">
+            <ion-label>
+              <h2>{{ l?.mission_name }}</h2>
+              <p>{{ l?.launch_site.site_name_long }}</p>
+              <p>{{ l?.details }}</p>
+            </ion-label>
+            <ion-note slot="end">
+              {{ l?.launch_year }}
+            </ion-note>
+          </ion-item>
+    
+          <ion-item-options side="end">
+            <ion-item-option color="danger">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-item-option>
+            <ion-item-option color="medium">
+              <ion-icon slot="icon-only" name="star"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding *ngIf="launches?.length < 1">
+        <h2 padding>Pas de résultats \(>_<)/ </h2>
+      </ion-item-sliding>
+    </ion-list>
+  
+  </ion-content>

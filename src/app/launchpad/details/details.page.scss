@@ -1,0 +1,27 @@
+#previousLink {
+    margin-left: 10px; 
+    color: rgb(95, 93, 93);
+    cursor: pointer;
+}
+
+#header {
+    background-color: rgba(243, 255, 134, 0.5);
+    border-bottom: 1px grey solid;
+
+    #title {
+        text-align: center;
+        font-family: "OrbitronBold";
+        font-size: 2em;
+    }
+}
+
+ion-img {
+    display: inline-block;
+}
+
+#urls {
+    #wikipedia {
+        width: 11%;
+        padding-left: 2%;
+    }
+}

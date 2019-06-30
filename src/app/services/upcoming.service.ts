@@ -14,7 +14,7 @@ export class UpComingService {
     this.apiBaseUrl = 'https://api.spacexdata.com/v3/';
   }
 
-  getLaunches(): Observable<UpComing[]> {
+  getUpComing(): Observable<UpComing[]> {
     const requestEndpoint = this.apiBaseUrl + 'launches/upcoming';
     return this.http.get<UpComing[]>(requestEndpoint).pipe(
       map(upcomings => {
