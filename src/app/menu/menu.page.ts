@@ -1,3 +1,4 @@
+import { LaunchPad } from './../Models/launchpad.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 import { NgProgress } from '@ngx-progressbar/core';
@@ -37,10 +38,20 @@ export class MenuPage implements OnInit {
       icon: '/assets/icon/menu/cal.png'
     },
     {
+      title: 'Launch Pads',
+      url: '/menu/launchpads',
+      icon: '/assets/icon/menu/bell.png'
+    },
+    {
       title: 'Core',
       url: '/menu/cores',
       icon: '/assets/icon/menu/core.png'
     }
+    /*{
+      title: 'About',
+      url: '/menu/info',
+      icon: '/assets/icon/menu/question.svg'
+    }*/
   ];
   constructor(
     private router: Router,

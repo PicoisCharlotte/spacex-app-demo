@@ -1,10 +1,8 @@
-import { forEach } from '@angular/router/src/utils/collection';
 import { Launch } from './../../../Models/launch.model';
 import { LaunchService } from './../../../services/launch.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NavParams } from '@ionic/angular';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details',

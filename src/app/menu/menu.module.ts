@@ -31,6 +31,14 @@ const routes: Routes = [
         loadChildren: '../all-launches/launch/details/details.module#DetailsPageModule'
       },
       {
+        path: 'launchpads', 
+        loadChildren: '../launchpad/launchpad.module#LaunchpadPageModule' 
+      },
+      {
+        path: 'launchpads/details/:siteId', 
+        loadChildren: '../launchpad/details/details.module#DetailsPageModule'
+      },
+      {
         path: 'missions',
         loadChildren: '../mission/mission.module#MissionPageModule'
       },

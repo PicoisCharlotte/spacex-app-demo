@@ -12,7 +12,7 @@
       <ion-list>
         <ion-item-sliding *ngFor="let p of pasts" [ngClass]="{'active': p.active, 'inactive': !p.active}"
             class="ion-activatable" (click)="buttonClick(p.flight_number)">
-            <ion-item href="#">
+            <ion-item href="http://localhost:8100/menu/launches/details/{{p.flight_number}}">
               <ion-label>
                 <h2>{{ p.mission_name }}</h2>
                 <p>{{ p.launch_site.site_name_long }}</p>
