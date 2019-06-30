@@ -11,6 +11,7 @@ import { NgProgress } from '@ngx-progressbar/core';
 })
 export class RocketPage implements OnInit {
   rockets: Rocket[];
+  rocket: Rocket;
   observableRockets: Observable<Rocket[]>;
 
   constructor(private rocketService: RocketService) { }
@@ -28,5 +29,8 @@ export class RocketPage implements OnInit {
 
   buttonClick(rocketId: string) {
     console.log(rocketId);
+    this.rocketService.getOneRocket(rocketId).subscribe(result => {
+      this.rocket = result;
+    });
   }
 }

@@ -24,4 +24,14 @@ export class RocketService {
       })
     );
   }
+
+  getOneRocket(string): Observable<Rocket> {
+    const requestEndpoint = this.apiBaseUrl + 'rockets/' + string;
+    return this.http.get<Rocket>(requestEndpoint).pipe(
+      map(rocket => {
+        console.log(rocket);
+        return rocket;
+      })
+    );
+  }
 }

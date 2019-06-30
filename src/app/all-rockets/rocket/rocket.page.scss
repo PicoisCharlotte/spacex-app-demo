@@ -7,3 +7,32 @@
   border-left: 6px solid var(--ion-color-danger);
   margin: 0px 0 2px 0;
 }
+
+.activeDescrip {
+  background-color: rgb(155, 238, 122);
+}
+
+.inactiveDescrip {
+  background-color: rgb(223, 89, 89);
+}
+
+ion-card-content {
+  margin-top: 10px;
+}
+
+ion-card-subtitle {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px darkgrey solid;
+}
+
+#content {
+  font-family: QuanticoRegular;
+}
+
+#link {
+  margin-bottom: 20px;
+  padding: 10px 0 10px 0;
+  border-top: 1px darkgrey solid;
+  border-bottom: 1px darkgrey dashed;
+}
