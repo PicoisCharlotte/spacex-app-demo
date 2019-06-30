@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Histories of SpaceX</ion-title>
+    </ion-toolbar>
+    <ion-searchbar showCancelButton="always" placeholder="Rechercher..." [(ngModel)]="searchTerm" (ionChange)="valueChanged()"></ion-searchbar>
+  </ion-header>
+  <ion-content>
+    <app-skeleton *ngIf="!histories"></app-skeleton>
+    <ion-list>
+      <ion-item-sliding *ngFor="let h of histories" class="ion-activatable" (click)="buttonClick(h.id)">
+          <ion-item>
+            <ion-label>
+              <h2>{{ h?.title }}</h2>
+              <p>{{ h?.details }}</p>
+              <p><a href="{{ h?.links.wikipedia }}">{{ h?.links.wikipedia }}</a></p>
+              <p><a href="{{ h?.links.article }}">{{ h?.links.wikipedia }}</a></p>
+            </ion-label>
+            <ion-note slot="end">
+                {{ date }}
+            </ion-note>
+          </ion-item>
+      </ion-item-sliding>
+
+      <ion-item-sliding *ngIf="histories?.length < 1">
+        <h2 padding>T'as fait une erreur \(>_<)/ </h2>
+      </ion-item-sliding>
+    </ion-list>
+  
+  </ion-content>

@@ -46,6 +46,11 @@ export class MenuPage implements OnInit {
       title: 'Core',
       url: '/menu/cores',
       icon: '/assets/icon/menu/core.png'
+    },
+    {
+      title: 'Histories',
+      url: '/menu/histories',
+      icon: '/assets/icon/menu/bell.png'
     }
   ];
   constructor(

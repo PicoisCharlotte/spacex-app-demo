@@ -57,6 +57,10 @@ const routes: Routes = [
       {
         path: 'cores',
         loadChildren: '../core/core.module#CorePageModule'
+      },
+      { 
+        path: 'histories', 
+        loadChildren: './history/history.module#HistoryPageModule' 
       }
     ]
   }
