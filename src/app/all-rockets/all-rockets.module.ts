@@ -14,12 +14,12 @@ const routes: Routes = [
     component: AllRocketsPage,
     children: [
       {
-        path: 'rocket', 
+        path: 'rocket',
         loadChildren: '../rocket/rocket.module#RocketPageModule'
       },
-      { 
-        path: 'tab2', 
-        loadChildren: '../tab2/tab2.module#Tab2PageModule' 
+      {
+        path: 'roadster',
+        loadChildren: '../roadster/roadster.module#RoadsterPageModule'
       }
     ]
   },
