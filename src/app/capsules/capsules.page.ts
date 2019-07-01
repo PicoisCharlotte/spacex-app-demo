@@ -12,12 +12,14 @@ export class CapsulesPage implements OnInit {
 
   capsules: Capsule[];
   capsule: Capsule;
+  value: string;
   observableCapsule: Observable<any>;
   constructor(private capsuleService: CapsulesService) { }
 
   ngOnInit() {
     this.capsuleService.getCapsules().subscribe(result => {
       this.capsules = result;
+      this.value = "Capsules";
     });
 
     setTimeout(() => {
@@ -30,5 +32,4 @@ export class CapsulesPage implements OnInit {
       this.capsule = result;
     });
   }
-
 }

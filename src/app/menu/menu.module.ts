@@ -67,8 +67,8 @@ const routes: Routes = [
         loadChildren: '../dragon/dragon.module#DragonPageModule'
       },
       {
-        path: 'capsules',
-        loadChildren: '../capsules/capsules.module#CapsulesPageModule'
+        path: 'all-capsules',
+        loadChildren: '../capsules/all-capsules/all-capsules.module#AllCapsulesPageModule'
       },
       {
         path: 'capsules/capsule/:capsuleSerial',

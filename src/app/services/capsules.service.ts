@@ -32,4 +32,20 @@ export class CapsulesService {
         })
     );
   }
+  getCapsulesUpcoming(): Observable<Capsule[]> {
+    const requestEndpoint = this.apiBaseUrl + 'capsules/upcoming';
+    return this.http.get<Capsule[]>(requestEndpoint).pipe(
+      map(capsules => {
+        return capsules;
+      })
+    );
+  }
+  getCapsulesPast(): Observable<Capsule[]> {
+    const requestEndpoint = this.apiBaseUrl + 'capsules/past';
+    return this.http.get<Capsule[]>(requestEndpoint).pipe(
+      map(capsules => {
+        return capsules;
+      })
+    );
+  }
 }

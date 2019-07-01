@@ -55,7 +55,7 @@ export class MenuPage implements OnInit {
     },
     {
       title: 'Capsule',
-      url: '/menu/capsules',
+      url: '/menu/all-capsules',
       icon: '/assets/icon/dragon.png'
 
     },
