@@ -12,38 +12,40 @@
   <app-previous></app-previous>
   <div id="content" *ngIf="core">
     <ion-label>
-      <div class="wrapper">
-        <div class="left-part">
-          <h1>{{ core.core_serial }}</h1>
-        </div>
-        <div class="right-part">
-          <p [ngClass]="{'active': core.status === 'active',
+      <ion-grid>
+        <ion-row>
+          <ion-col size="5">
+              <h1>{{ core.core_serial }}</h1>
+          </ion-col>
+          <ion-col>
+            <p [ngClass]="{'active': core.status === 'active',
                     'lost': core.status === 'lost',
                     'inactive': core.status === 'inactive',
                     'unknown': core.status === 'unknown'}">{{ core.status }}</p>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div class="left-part">
-          <p><b>Relative missions</b></p>
-        </div>
-        <div class="right-part" *ngFor="let mission of coreMissionIds">
-          <p id="missionLabel">{{ mission.name }}</p>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div class="left-part" id="title-water-landing">
-          <p><b>Water landing :</b></p>
-        </div>
-        <div class="right-part">
-          <div id="waterlanding" *ngIf="waterlanding">
-            <img src="../../../assets/icon/menu/waterlanding.png">
-          </div>
-          <div id="nowaterlanding" *ngIf="!waterlanding">
-            <img src="../../../assets/icon/menu/nope.png">
-          </div>
-        </div>
-      </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <p><b>Relative missions</b></p>
+          </ion-col>
+          <ion-col *ngFor="let mission of coreMissionIds">
+            <p id="missionLabel">{{ mission.name }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <p><b>Water landing :</b></p>
+          </ion-col>
+          <ion-col>
+            <div id="waterlanding" *ngIf="waterlanding">
+              <img src="../../../assets/icon/menu/waterlanding.png">
+            </div>
+            <div id="nowaterlanding" *ngIf="!waterlanding">
+              <img src="../../../assets/icon/menu/nope.png">
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
       <ion-card>
         <ion-card-header><b>Details :</b></ion-card-header>
         <ion-card-content>

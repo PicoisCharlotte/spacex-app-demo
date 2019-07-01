@@ -47,8 +47,8 @@ const routes: Routes = [
         loadChildren: '../payload/details/details.module#DetailsPageModule'
       },
       {
-        path: 'cores',
-        loadChildren: '../core/core.module#CorePageModule'
+        path: 'all-cores',
+        loadChildren: '../core/all-cores/all-cores.module#AllCoresPageModule'
       },
       {
         path: 'cores/details/:coreSerial',

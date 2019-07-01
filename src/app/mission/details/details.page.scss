@@ -8,7 +8,7 @@ h2 {
 }
 
 p {
-  padding-left: 2%;
+  padding-left: 10px;
   font-size: medium;
   text-decoration: underline;
 }
@@ -20,42 +20,21 @@ p {
   padding-bottom: 1%;
 }
 
-#wrapper {
-  padding-top: 20px;
-  width: 900px;
-  overflow: hidden;
-}
-
-#urls {
-  width: 700px;
-  float: left;
-  padding-left: 10px;
-}
-
-#payloads {
-  width: 200px;
-  float: left;
-  padding-left: 23px;
-}
-
 #wikiLogo {
-  width: 9%;
-  padding-left: 2%;
+  width: 60px;
+  padding-left: 12px;
   padding-bottom: 3px;
 }
 
 #twitterLogo {
-  width: 8%;
-  height: 6%;
+  height: 47px;
   padding-bottom: 7px;
-  padding-left: 2%;
+  padding-left: 10px;
 }
 
 #websiteLogo {
-  width: 9%;
-  height: 9%;
+  width: 60px;
   padding-left: 9px;
-  margin-left: 7px;
 }
 
 #payloadLabel {
@@ -67,4 +46,5 @@ p {
   outline:none;
   color: #039be5;
   text-decoration: underline;
+  padding-left: 10px;
 }

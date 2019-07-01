@@ -13,18 +13,17 @@ const routes: Routes = [
     component: AllCoresPage,
     children: [
         {
-          path: 'core',
+          path: 'cores',
           loadChildren: '../core.module#CorePageModule'
         },
         {
           path: 'core-upcoming',
-          loadChildren: '../../upcoming/upcoming.module#UpcomingPageModule'
+          loadChildren: '../upcoming-cores/upcoming-cores.module#UpcomingCoresPageModule'
         },
         {
-          path: 'past',
-          loadChildren: '../../past/past.module#PastPageModule'
+          path: 'core-past',
+          loadChildren: '../past-cores/past-cores.module#PastCoresPageModule'
         }
-
     ]
   },
     {

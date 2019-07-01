@@ -30,4 +30,8 @@ export class RoadsterPage implements OnInit {
     slidesDidLoad() {
         this.slides.startAutoplay();
     }
+
+    redirectToWiki() {
+        location.href = this.roadsterWiki;
+    }
 }

@@ -38,7 +38,7 @@ export class MenuPage implements OnInit {
     },
     {
       title: 'Core',
-      url: '/menu/cores',
+      url: '/menu/all-cores',
       icon: '/assets/icon/menu/core.png'
       // children: [
       //     {

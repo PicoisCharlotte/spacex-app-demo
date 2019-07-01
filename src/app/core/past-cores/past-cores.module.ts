@@ -5,12 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PastPage } from './past.page';
+import { PastCoresPage } from './past-cores.page';
+import {ComponentsModule} from '../../modules/components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: PastPage
+    component: PastCoresPage
   }
 ];
 
@@ -19,8 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PastPage]
+  declarations: [PastCoresPage]
 })
-export class PastPageModule {}
+export class PastCoresPageModule {}

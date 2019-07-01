@@ -7,11 +7,12 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'core', loadChildren: './core/core.module#CorePageModule' },
   { path: 'all-cores', loadChildren: './core/all-cores/all-cores.module#AllCoresPageModule' },
-  { path: 'upcoming', loadChildren: './core/upcoming/upcoming.module#UpcomingPageModule' },
-  { path: 'past', loadChildren: './core/past/past.module#PastPageModule' },
-  { path: 'details', loadChildren: './core/details/details.module#DetailsPageModule' },  { path: 'landing-pad', loadChildren: './landing-pad/landing-pad.module#LandingPadPageModule' },
+  { path: 'details', loadChildren: './core/details/details.module#DetailsPageModule' },
+  { path: 'landing-pad', loadChildren: './landing-pad/landing-pad.module#LandingPadPageModule' },
   { path: 'details', loadChildren: './landing-pad/details/details.module#DetailsPageModule' },
   { path: 'roadster', loadChildren: './roadster/roadster.module#RoadsterPageModule' },
+  { path: 'upcoming-cores', loadChildren: './core/upcoming-cores/upcoming-cores.module#UpcomingCoresPageModule' },  { path: 'past-cores', loadChildren: './core/past-cores/past-cores.module#PastCoresPageModule' },
+
 
 ];
 
