@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ship } from '../Models/ship.model';
 import { ShipsService } from '../services/ships.service';
+import { SettingsService } from '../Models/settings.service';
 
 @Component({
   selector: 'app-ships',
@@ -13,7 +14,14 @@ export class ShipsPage implements OnInit {
   ships: Ship[];
   ship: Ship;
   observableShip: Observable<any>;
-  constructor(private shipService: ShipsService) { }
+  selectedTheme: String;
+  constructor(private shipService: ShipsService, private settings: SettingsService) { 
+    
+    this.settings.getActiveTheme().subscribe(val => {
+      this.selectedTheme = val;
+      console.log(val);
+    });
+  }
 
   ngOnInit() {
     this.shipService.getShips().subscribe(result => {

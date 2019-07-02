@@ -38,9 +38,41 @@
           <p><b>Orbit duration</b> : {{dragon.orbit_duration_yr}} years</p>
           <p><b>Mass</b> : {{dragon.dry_mass_kg}} kg / {{dragon.dry_mass_lb}} lb</p>
           <p><b>Diameter</b> : {{dragon.diameter.meters}} meters / {{dragon.diameter.feet}} feets</p>
+          <p><b>Equipage</b> : {{dragon.crew_capacity}}</p>
+          <p><b>Angle de la paroi</b> : {{dragon.sidewall_angle_deg}} degree</p>
+          <p><b>Orbit</b> : {{dragon.orbit_duration_yr}}</p>
           
           <ion-card-subtitle><b>Description</b></ion-card-subtitle>
           <p>{{dragon.description}}</p>
+
+          <ion-card-subtitle><b>Lancement masse utile</b></ion-card-subtitle>
+          <p>{{dragon.launch_payload_mass.kg}} kg</p>
+          <p>{{dragon.launch_payload_mass.lb}} lb</p>
+
+          <ion-card-subtitle><b>Volume de lancement de charge utile</b></ion-card-subtitle>
+          <p>{{dragon.launch_payload_vol.cubic_meters}} meters</p>
+          <p>{{dragon.launch_payload_vol.cubic_feet}} feets</p>
+
+          <ion-card-subtitle><b>Retour de la masse utile</b></ion-card-subtitle>
+          <p>{{dragon.return_payload_mass.kg}} kg</p>
+          <p>{{dragon.return_payload_mass.lb}} lb</p>
+
+          <ion-card-subtitle><b>Retour du volume</b></ion-card-subtitle>
+          <p>{{dragon.return_payload_vol.cubic_meters}} meters</p>
+          <p>{{dragon.return_payload_vol.cubic_feet}} feets</p>
+
+          <ion-card-subtitle><b>Capsule pressurisée</b></ion-card-subtitle>
+          <p>{{dragon.pressurized_capsule.payload_volume.cubic_meters}} meters</p>
+          <p>{{dragon.pressurized_capsule.payload_volume.cubic_feet}} feets</p>
+
+          <ion-card-subtitle><b>Tronc</b></ion-card-subtitle>
+          <p>Volume : {{dragon.trunk.trunk_volume.cubic_meters}} meters / {{dragon.trunk.trunk_volume.cubic_feet}} feets</p>
+          <p>Panneau solaire: {{dragon.trunk.cargo.solar_array}}</p>
+
+          <ion-card-subtitle><b>Taille du tronc</b></ion-card-subtitle>
+          <p>{{dragon.height_w_trunk.meters}} meters</p>
+          <p>{{dragon.height_w_trunk.feet}} feets</p>
+
         </ion-card-content>
       </ion-card>
       <ion-card>
@@ -54,5 +86,19 @@
           <p><b>Partner</b> : {{dragon.heat_shield.dev_partner}}</p>
         </ion-card-content>
       </ion-card>
+      <ion-card>
+        <ion-card-header>
+            <ion-card-title>Thrusters</ion-card-title>
+          </ion-card-header>
+      <ion-card-content *ngFor="let thruster of dragon.thrusters">
+        <p><b>Type</b> : {{thruster.type}}</p>
+        <p><b>Amount</b> : {{thruster.amount}}</p>
+        <p><b>Pods</b> : {{thruster.pods}}</p>
+        <p><b>Fuels</b> : {{thruster.fuel_1}} / {{thruster.fuel_2}}</p>
+        <ion-card-subtitle><b>Thrust</b></ion-card-subtitle>
+          <p>{{thruster.thrust.kN}} kN</p>
+          <p>{{thruster.thrust.lbf}} lbf</p>
+      </ion-card-content>
+    </ion-card>
     </div>
 </ion-content>

@@ -5,6 +5,7 @@ import { NavController } from '@ionic/angular';
 import { Observable, timer } from 'rxjs';
 import { NextLaunch } from '../Models/nextLaunch.model';
 import { NextLaunchService } from '../services/nextLaunch.service';
+import { SettingsService } from '../Models/settings.service';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +17,20 @@ export class HomePage implements OnInit{
   nextlaunch: NextLaunch;
   observableNextLaunch: Observable<NextLaunch>;
 
-  constructor(private nextLaunchService: NextLaunchService, public navCtrl: NavController/*, private mission: Mission*/) { }
+  selectedTheme: String;
+
+  constructor(private nextLaunchService: NextLaunchService, public navCtrl: NavController, private settings: SettingsService/*, private mission: Mission*/) { 
+
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+
+  }
 
   async ngOnInit() {
     this.nextLaunchService.getNextLaunch().subscribe(result => {
       this.nextlaunch = result;
       this.chrono = this.convertUnixTimeToString(result.launch_date_unix);
     })
+
 
     setTimeout(() => {
       this.observableNextLaunch = this.nextLaunchService.getNextLaunch();
@@ -41,5 +49,15 @@ export class HomePage implements OnInit{
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
 
     return time;
+  }
+
+  toggleAppTheme(){
+      if(this.selectedTheme == 'dark-theme'){
+        this.settings.setActiveTheme('light-theme');
+        console.log("light-theme");
+      } else {
+        this.settings.setActiveTheme('dark-theme');
+        console.log("dark-theme");
+      }
   }
 }

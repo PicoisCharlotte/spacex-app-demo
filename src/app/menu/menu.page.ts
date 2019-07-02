@@ -2,6 +2,7 @@ import { LaunchPad } from './../Models/launchpad.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 import { NgProgress } from '@ngx-progressbar/core';
+import { SettingsService } from '../Models/settings.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,7 @@ import { NgProgress } from '@ngx-progressbar/core';
 })
 export class MenuPage implements OnInit {
   selectedPath: string;
+  selectedTheme: String;
 
   pages = [
     {
@@ -73,8 +75,11 @@ export class MenuPage implements OnInit {
   ];
   constructor(
     private router: Router,
-    public progress: NgProgress
+    public progress: NgProgress,
+    private settings: SettingsService
   ) {
+    
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {
         this.selectedPath = event.url;
