@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
       <ion-title>Roadster</ion-title>
     </ion-buttons>
   </ion-toolbar>
@@ -83,12 +84,12 @@
             <ion-card-subtitle>
               <ion-grid>
                 <ion-row>
-                  <ion-col size="1">
-                    <img id="planet-earth" src="../../assets/icon/menu/planet-earth.svg">
-                  </ion-col>
                   <ion-col>
                     <p><b>Earth distance (km) : </b> {{roadster.earth_distance_km}}</p>
                     <p><b>Earth distance (mi) : </b> {{roadster.earth_distance_mi}}</p>
+                  </ion-col>
+                  <ion-col size="2">
+                    <img id="planet-earth" src="../../assets/icon/menu/planet-earth.svg">
                   </ion-col>
                 </ion-row>
               </ion-grid>
@@ -98,12 +99,12 @@
             <ion-card-subtitle>
               <ion-grid>
                 <ion-row>
-                  <ion-col size="1">
-                    <img id="mars" src="../../assets/icon/menu/mars.svg">
-                  </ion-col>
                   <ion-col>
                     <p><b>Mars distance (km) : </b>{{roadster.mars_distance_km}}</p>
                     <p><b>Mars distance (mi) : </b>{{roadster.mars_distance_mi}}</p>
+                  </ion-col>
+                  <ion-col size="2">
+                    <img id="mars" src="../../assets/icon/menu/mars.svg">
                   </ion-col>
                 </ion-row>
               </ion-grid>

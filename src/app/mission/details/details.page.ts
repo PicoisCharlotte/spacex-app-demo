@@ -42,18 +42,19 @@ export class DetailsPage implements OnInit {
     }
 
     redirectToWiki() {
-        location.href = this.missionWiki;
+        window.open(this.missionWiki, '_blank');
     }
 
     redirectToTwitter() {
-        location.href = this.missionTwitter;
+        window.open(this.missionTwitter, '_blank');
     }
 
     redirectToWebsite() {
-        location.href = this.missionWebsite;
+        window.open(this.missionWebsite, '_blank');
     }
 
     redirectToSearchPayloadByIdPage(payloadId: string) {
+        console.log("payload Id : " + payloadId);
         location.href =  'http://localhost:8100/menu/payloads/details/' + payloadId;
     }
 }

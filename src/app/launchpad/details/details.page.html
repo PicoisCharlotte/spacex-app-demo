@@ -1,68 +1,65 @@
 <ion-header>
     <ion-toolbar color="dark">
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Launch Pad Details</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Launch Pad Details</ion-title>
     </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-item>
-        <ion-icon (click)="previousPage()" name="arrow-round-back"></ion-icon>
-        <a id="previousLink" (click)="previousPage()">Back</a>
-    </ion-item>
+</ion-header>
+<ion-content>
+    <app-previous></app-previous>
     <app-skeleton *ngIf="!launchpad"></app-skeleton>
-      <div *ngIf="launchpad">
+    <div *ngIf="launchpad">
         <ion-card>
-          <ion-card-header id="header">
-            <ion-card-title id="title">{{launchpad.site_name_long}}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row style="margin: 5px 0 5px 0;">
-                <ion-col size="1"></ion-col>
-                <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Location</ion-col>
-                <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Vehicles Launched</ion-col>
-                <ion-col size="1"></ion-col>
-              </ion-row>
-              <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
-                <ion-col size="2" style="padding-top: 10px; text-align: right;">Name:<br>Region: </ion-col>
-                <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
-                    {{launchpad.location.name}}<br>{{launchpad.location.region}}
-                </ion-col>
-                <ion-col size="7" style="line-height: 50px; text-align: center;color: black;">
-                  {{launchpad.vehicles_launched}}
-                </ion-col>
-                <ion-col size="1"></ion-col>
-              </ion-row>
-              <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
-                <ion-col size="2" style="padding-top: 10px; text-align: right;">
-                  Latitude: <br>Longitude: <br>Attempted Launches: <br> Successful Launches: 
-                </ion-col>
-                <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
-                    {{launchpad.location.latitude}}<br>
-                    {{launchpad.location.longitude}}<br>
-                    {{launchpad.attempted_launches}}<br>
-                    {{launchpad.successful_launches}}
-                </ion-col>
-                <ion-col size="7"></ion-col>
-              </ion-row>
-              <ion-row style="margin: 5px 0 5px 0;">
-                  <ion-col size="1"></ion-col>
-                  <ion-col size="10" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Internet Link</ion-col>
-                  <ion-col size="1"></ion-col>
-                </ion-row>
-              <ion-row>
-                  <ion-col size="2"></ion-col>
-                  <ion-col size="8" style="padding-top: 10px; text-align: center;">
-                    <div id="urls">
-                      <ion-img id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
-                    </div>
-                  </ion-col>
-                  <ion-col size="2"></ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
+            <ion-card-header id="header">
+                <ion-card-title id="title">{{launchpad.site_name_long}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row style="margin: 5px 0 5px 0;">
+                        <ion-col size="1"></ion-col>
+                        <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Location</ion-col>
+                        <ion-col size="5" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Vehicles Launched</ion-col>
+                        <ion-col size="1"></ion-col>
+                    </ion-row>
+                    <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+                        <ion-col size="2" style="padding-top: 10px; text-align: right;">Name:<br>Region: </ion-col>
+                        <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                            {{launchpad.location.name}}<br>{{launchpad.location.region}}
+                        </ion-col>
+                        <ion-col size="7" style="line-height: 50px; text-align: center;color: black;">
+                            {{launchpad.vehicles_launched}}
+                        </ion-col>
+                        <ion-col size="1"></ion-col>
+                    </ion-row>
+                    <ion-row style="border-bottom: 1px grey solid; margin-bottom: 15px">
+                        <ion-col size="2" style="padding-top: 10px; text-align: right;">
+                            Latitude: <br>Longitude: <br>Attempted Launches: <br> Successful Launches:
+                        </ion-col>
+                        <ion-col size="3" style="padding-top: 10px; text-align: center; color: black;">
+                            {{launchpad.location.latitude}}<br>
+                            {{launchpad.location.longitude}}<br>
+                            {{launchpad.attempted_launches}}<br>
+                            {{launchpad.successful_launches}}
+                        </ion-col>
+                        <ion-col size="7"></ion-col>
+                    </ion-row>
+                    <ion-row style="margin: 5px 0 5px 0;">
+                        <ion-col size="1"></ion-col>
+                        <ion-col size="10" style="font-size: 1.2em; font-weight: bold; text-align: center; color: rgb(168, 66, 29);">Internet Link</ion-col>
+                        <ion-col size="1"></ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="2"></ion-col>
+                        <ion-col size="8" style="padding-top: 10px; text-align: center;">
+                            <div id="urls">
+                                <ion-img id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
+                            </div>
+                        </ion-col>
+                        <ion-col size="2"></ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
         </ion-card>
-      </div>
-  </ion-content>
+    </div>
+</ion-content>

@@ -32,6 +32,6 @@ export class RoadsterPage implements OnInit {
     }
 
     redirectToWiki() {
-        location.href = this.roadsterWiki;
+        window.open(this.roadsterWiki, '_blank');
     }
 }

@@ -5,10 +5,7 @@
     </ion-buttons>
     <ion-title>About</ion-title>
   </ion-toolbar>
-  <ion-item>
-      <ion-icon (click)="previousPage()" name="arrow-round-back"></ion-icon>
-      <a id="previousLink" (click)="previousPage()">Back</a>
-  </ion-item>
+  <app-previous></app-previous>
 </ion-header>
 <ion-content>
     <div *ngIf="companyInfo"> 
