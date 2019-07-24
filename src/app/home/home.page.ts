@@ -50,14 +50,4 @@ export class HomePage implements OnInit{
 
     return time;
   }
-
-  toggleAppTheme(){
-      if(this.selectedTheme == 'dark-theme'){
-        this.settings.setActiveTheme('light-theme');
-        console.log("light-theme");
-      } else {
-        this.settings.setActiveTheme('dark-theme');
-        console.log("dark-theme");
-      }
-  }
 }

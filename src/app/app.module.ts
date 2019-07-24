@@ -12,6 +12,7 @@ import { ComponentsModule } from './modules/components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { SettingsService } from './Models/settings.service';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SettingsService,
   ],
   bootstrap: [AppComponent]
 })
