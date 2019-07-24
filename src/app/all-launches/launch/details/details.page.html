@@ -69,9 +69,9 @@
                 <ion-col size="2"></ion-col>
                 <ion-col size="8" style="padding-top: 10px; text-align: center;">
                   <div id="urls">
-                    <ion-img id="article" type="image"  src="../../../assets/img/www.png" (click)="urlArticle()"></ion-img>
-                    <ion-img id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
-                    <ion-img id="video" type="image" src="../../../assets/img/youtube.svg" (click)="urlVideo()"></ion-img>
+                    <ion-img *ngIf="launch.links.article_link" id="article" type="image"  src="../../../assets/img/www.png" (click)="urlArticle()"></ion-img>
+                    <ion-img *ngIf="launch.links.wikipedia" id="wikipedia" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="urlWikipedia()"></ion-img>
+                    <ion-img *ngIf="launch.links.video_link" id="video" type="image" src="../../../assets/img/youtube.svg" (click)="urlVideo()"></ion-img>
                   </div>
                 </ion-col>
                 <ion-col size="2"></ion-col>
