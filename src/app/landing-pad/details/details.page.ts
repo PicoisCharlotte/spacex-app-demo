@@ -67,7 +67,7 @@ export class DetailsPage implements OnInit {
     }
 
     redirectToWiki() {
-        location.href = this.landingPadWiki;
+        window.open(this.landingPadWiki, '_blank');
     }
 
 }

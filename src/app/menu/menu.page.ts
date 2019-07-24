@@ -47,9 +47,9 @@ export class MenuPage implements OnInit {
       icon: '/assets/icon/menu/core.png'
     },
     {
-      title: 'Histories',
-      url: '/menu/histories',
-      icon: '/assets/icon/menu/history.png'
+      title: 'Landing Pad',
+      url: '/menu/landingPads',
+      icon: '/assets/icon/menu/landing-pads.svg'
     }
   ];
   constructor(
