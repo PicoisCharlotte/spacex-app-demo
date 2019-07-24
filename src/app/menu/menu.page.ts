@@ -1,4 +1,3 @@
-import { LaunchPad } from './../Models/launchpad.model';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 import { NgProgress } from '@ngx-progressbar/core';

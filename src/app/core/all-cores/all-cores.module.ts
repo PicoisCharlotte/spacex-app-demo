@@ -11,12 +11,26 @@ const routes: Routes = [
   {
     path: 'all',
     component: AllCoresPage,
-    /*children: [
+    children: [
         {
-          path: 'core',
+          path: 'cores',
+          loadChildren: '../core.module#CorePageModule'
+        },
+        {
+          path: 'core-upcoming',
+          loadChildren: '../upcoming-cores/upcoming-cores.module#UpcomingCoresPageModule'
+        },
+        {
+          path: 'core-past',
+          loadChildren: '../past-cores/past-cores.module#PastCoresPageModule'
         }
-    ]*/
-  }
+    ]
+  },
+    {
+        path: '',
+        redirectTo: 'all/cores',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({

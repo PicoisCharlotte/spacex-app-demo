@@ -17,9 +17,9 @@ const routes: Routes = [
         path: 'rocket', 
         loadChildren: '../all-rockets/rocket/rocket.module#RocketPageModule'
       },
-      { 
-        path: 'tab2', 
-        loadChildren: '../all-rockets/tab2/tab2.module#Tab2PageModule' 
+      {
+        path: 'roadster',
+        loadChildren: '../roadster/roadster.module#RoadsterPageModule'
       }
     ]
   },

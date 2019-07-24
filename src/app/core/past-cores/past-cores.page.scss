@@ -1,0 +1,31 @@
+.lost {
+  color: var(--ion-color-warning);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#list {
+  padding-left: 10px;
+}
+
+#nowaterlanding {
+  width: 25px;
+  height: 25px;
+}
+
+#waterlanding {
+  width: 90px;
+  height: 90px;
+}
+
+#missionLabel {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #039be5;
+  text-decoration: underline;
+  padding-left: 10px;
+}

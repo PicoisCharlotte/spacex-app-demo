@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Core Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!core"></app-skeleton>
+  <app-previous></app-previous>
+  <div id="content" *ngIf="core">
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="5">
+              <h1>{{ core.core_serial }}</h1>
+          </ion-col>
+          <ion-col>
+            <p [ngClass]="{'active': core.status === 'active',
+                    'lost': core.status === 'lost',
+                    'inactive': core.status === 'inactive',
+                    'unknown': core.status === 'unknown'}">{{ core.status }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <p><b>Relative missions</b></p>
+          </ion-col>
+          <ion-col *ngFor="let mission of coreMissionIds">
+            <p id="missionLabel">{{ mission.name }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">
+            <p><b>Water landing :</b></p>
+          </ion-col>
+          <ion-col>
+            <div id="waterlanding" *ngIf="waterlanding">
+              <img src="../../../assets/icon/menu/waterlanding.png">
+            </div>
+            <div id="nowaterlanding" *ngIf="!waterlanding">
+              <img src="../../../assets/icon/menu/nope.png">
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-card>
+        <ion-card-header><b>Details :</b></ion-card-header>
+        <ion-card-content>
+          <div>
+            <p>{{ core.details }}</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-label>
+  </div>
+</ion-content>

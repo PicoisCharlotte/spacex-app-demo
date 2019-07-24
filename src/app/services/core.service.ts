@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Core} from '../Models/core.model';
 import {map} from 'rxjs/operators';
+import {CoreUpcoming} from '../Models/core-upcoming.model';
+import {CorePast} from '../Models/core-past.model';
 
 
 @Injectable({
@@ -33,18 +35,18 @@ export class CoreService {
     );
   }
 
-  getUpcomingCores(): Observable<Core[]> {
+  getUpcomingCores(): Observable<CoreUpcoming[]> {
     const requestEndPoint = this.apiBaseUrl + 'cores/upcoming';
-    return this.http.get<Core[]>(requestEndPoint).pipe(
+    return this.http.get<CoreUpcoming[]>(requestEndPoint).pipe(
         map(upcomingCores => {
           return upcomingCores;
         })
     );
   }
 
-  getPastCores(): Observable<Core[]> {
+  getPastCores(): Observable<CorePast[]> {
     const requestEndPoint = this.apiBaseUrl + 'cores/past';
-    return this.http.get<Core[]>(requestEndPoint).pipe(
+    return this.http.get<CorePast[]>(requestEndPoint).pipe(
         map(pastCores => {
             return pastCores;
         })

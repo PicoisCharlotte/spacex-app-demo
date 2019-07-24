@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Landing Pad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!landingPads"></app-skeleton>
+  <ion-list>
+    <ion-item-sliding *ngFor="let landingPad of landingPads"
+        [ngClass]="{'active': landingPad.status === 'active',
+                    'retired': landingPad.status === 'retired'}"
+        (click)="getOneLandingPad(landingPad.id)">
+    <ion-item href="http://localhost:8100/menu/landingPads/details/{{landingPad.id}}">
+      <ion-label>
+          <h2>{{ landingPad.full_name }} ({{ landingPad.id }})</h2>
+          <h4>{{ landingPad.landing_type }}</h4>
+      </ion-label>
+      <ion-note id="construct-note" slot="start" *ngIf="landingPad.status === 'under construction'">
+        <img id="construct" *ngIf="landingPad.status === 'under construction'" src="../../assets/icon/menu/construct.png">
+      </ion-note>
+    </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

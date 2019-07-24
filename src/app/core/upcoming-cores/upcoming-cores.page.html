@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Upcoming Cores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!upcomingCores"></app-skeleton>
+  <ion-list id="list">
+    <ion-item-sliding *ngFor="let upcomingCore of upcomingCores">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <p [ngClass]="{'lost': upcomingCore.status === 'lost'}">{{ upcomingCore.status }}</p>
+            </ion-col>
+            <ion-col>
+              <p>Relative launches : </p>
+              <p *ngFor="let mission of upcomingCore.missions">
+                <input id="missionLabel" type="button" (click)="redirectToSearchLaunchByIdPage(mission.flight)" value="{{ mission.name }}">
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <h2>{{ upcomingCore.core_serial }}</h2>
+        <p>Block : {{ upcomingCore.block }}</p>
+        <p *ngIf="upcomingCore.original_launch">Original launch : {{ upcoming.original_launch }}</p>
+        <p>{{ upcomingCore.details }}</p>
+        <ion-card>
+          <ion-card-content>
+            <ion-card>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-subtitle><b>Reuse count </b></ion-card-subtitle>
+                    <ion-label>{{ upcomingCore.reuse_count }}</ion-label>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle><b>Rtls Attempts </b></ion-card-subtitle>
+                    <ion-label>{{ upcomingCore.rtls_attempts}}</ion-label>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-subtitle><b>Rtls Landings </b></ion-card-subtitle>
+                    <ion-label>{{ upcomingCore.rtls_landings}}</ion-label>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-subtitle><b>Asds Attempts </b></ion-card-subtitle>
+                    <ion-label>{{ upcomingCore.asds_attempts}}</ion-label>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-subtitle><b>Asds Landings </b></ion-card-subtitle>
+                    <ion-label>{{ upcomingCore.asds_landings}}</ion-label>
+                  </ion-col>
+                  <ion-col>
+                    <p><b>Water landing </b></p>
+                    <div id="waterlanding" *ngIf="upcomingCore.water_landing">
+                      <img src="../../../assets/icon/menu/waterlanding.png">
+                    </div>
+                    <div id="nowaterlanding" *ngIf="!upcomingCore.water_landing">
+                      <img src="../../../assets/icon/menu/nope.png">
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

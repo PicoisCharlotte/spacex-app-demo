@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-title>Roadster</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-slides class="ionslide" #slider (ionSlidesDidLoad)="slidesDidLoad()" *ngIf="roadsterImage" autoplay="5000" loop="true" speed="3000" [options]="slideOpts">
+    <ion-slide *ngFor="let roadsterImg of roadsterImage">
+      <div>
+        <img src="{{ roadsterImg }}">
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!roadster"></app-skeleton>
+  <div *ngIf="roadster">
+    <ion-label>
+      <ion-card>
+        <ion-card-header>
+          <p><b>{{roadster.name}}</b></p>
+        </ion-card-header>
+        <ion-card-header>
+          <p>{{ roadster.launch_date_utc | date: 'dd/MM/yyyy' }}</p>
+          <p>{{roadster.details}}</p>
+          <p><u>Click to learn more</u></p>
+          <p><input id="wikiLogo" type="image" src="../../../assets/img/wikipediaLogo.png" (click)="redirectToWiki()"></p>
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Mass (kg):</b> {{ roadster.launch_mass_kg }}</p>
+              <p><b>Mass (lbs) :</b>{{ roadster.launch_mass_lbs }}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Orbit type : </b>{{roadster.orbit_type}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Apopsis : </b> {{ roadster.apoapsis_au }}</p>
+              <p><b>Periapsis (au): </b> {{ roadster.periapsis_au }}</p>
+              <p><b>Periapsis (arg) : </b>{{roadster.periapsis_arg}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Semi major axis : </b>{{ roadster.semi_major_axis_au }}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Eccentricity : </b>{{roadster.eccentricity}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Inclination : </b> {{roadster.inclination}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Longitude : </b>{{roadster.longitude}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Period days : </b>{{ roadster.period_days }}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <p><b>Speed (km/h) : </b>{{roadster.speed_kph}}</p>
+              <p><b>Speed (mp/h) : </b>{{roadster.speed_mph}}</p>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="1">
+                    <img id="planet-earth" src="../../assets/icon/menu/planet-earth.svg">
+                  </ion-col>
+                  <ion-col>
+                    <p><b>Earth distance (km) : </b> {{roadster.earth_distance_km}}</p>
+                    <p><b>Earth distance (mi) : </b> {{roadster.earth_distance_mi}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-subtitle>
+          </ion-card>
+          <ion-card>
+            <ion-card-subtitle>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="1">
+                    <img id="mars" src="../../assets/icon/menu/mars.svg">
+                  </ion-col>
+                  <ion-col>
+                    <p><b>Mars distance (km) : </b>{{roadster.mars_distance_km}}</p>
+                    <p><b>Mars distance (mi) : </b>{{roadster.mars_distance_mi}}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-subtitle>
+          </ion-card>
+        </ion-card-content>
+      </ion-card>
+    </ion-label>
+  </div>
+</ion-content>

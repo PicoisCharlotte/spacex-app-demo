@@ -8,6 +8,8 @@ import {map} from 'rxjs/operators';
     providedIn: 'root'
 })
 export class MissionService {
+    missions: Observable<Mission[]>;
+
     private readonly apiBaseUrl: string;
 
     constructor(private http: HttpClient) {

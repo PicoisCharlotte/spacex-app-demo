@@ -1,0 +1,46 @@
+#content {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#nowaterlanding {
+  width: 25px;
+  height: 25px;
+}
+
+#waterlanding {
+  width: 90px;
+  height: 90px;
+}
+
+#title-water-landing {
+  padding-top: 37px;
+}
+
+.active {
+  color: var(--ion-color-success);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.lost {
+  color: var(--ion-color-warning);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.inactive {
+  color: var(--ion-color-danger);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.unknown {
+  color: #111111;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.missionLabel {
+  font-size: 15px;
+}
