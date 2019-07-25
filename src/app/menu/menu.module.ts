@@ -63,6 +63,30 @@ const routes: Routes = [
                 loadChildren: '../core/details/details.module#DetailsPageModule'
             },
             {
+                path: 'dragons',
+                loadChildren: '../dragon/all-dragons/all-dragons.module#AllDragonsPageModule'
+            },
+            {
+                path: 'dragons/dragon/:dragonId',
+                loadChildren: '../dragon/dragon.module#DragonPageModule'
+            },
+            {
+                path: 'all-capsules',
+                loadChildren: '../capsules/all-capsules/all-capsules.module#AllCapsulesPageModule'
+            },
+            {
+                path: 'capsules/capsule/:capsuleSerial',
+                loadChildren: '../capsules/details/details.module#DetailsPageModule'
+            },
+            {
+                path: 'ships',
+                loadChildren: '../ships/ships.module#ShipsPageModule'
+            },
+            {
+                path: 'ships/ship/:shipId',
+                loadChildren: '../ships/details/details.module#DetailsPageModule'
+            },
+            {
                 path: 'landingPads',
                 loadChildren: '../landing-pad/landing-pad.module#LandingPadPageModule'
             },

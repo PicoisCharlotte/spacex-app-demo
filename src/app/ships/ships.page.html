@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Ships</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="back-color">
+    <app-skeleton *ngIf="!ships"></app-skeleton>
+    <ion-list>
+      <ion-item-sliding *ngFor="let ship of ships"
+          [ngClass]="{'name': ship.ship_name === 'name',
+                      'type': ship.ship_type === 'type'}"
+          class="ion-activatable" (click)="getOneShip(ship.ship_id)">
+          <ion-item href="http://localhost:8100/menu/ships/ship/{{ship.ship_id}}">
+          <ion-label>
+            <h2>{{ ship.ship_name }}</h2>
+            <p>{{ ship.ship_type }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+  

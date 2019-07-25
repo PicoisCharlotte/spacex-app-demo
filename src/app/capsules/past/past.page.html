@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Capsules Past</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <app-skeleton *ngIf="!capsules"></app-skeleton>
+    <ion-list>
+      <ion-item-sliding *ngFor="let capsule of capsules"
+          [ngClass]="{'serial': capsule.capsule_serial === 'serial',
+                      'status': capsule.status === 'status'}"
+          class="ion-activatable" (click)="getOneCapsule(capsule.capsule_serial)">
+          <ion-item href="http://localhost:8100/menu/capsules/capsule/{{capsule.capsule_serial}}">
+          <ion-label>
+            <h2>{{ capsule.capsule_serial }}</h2>
+            <p>{{ capsule.status }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+  

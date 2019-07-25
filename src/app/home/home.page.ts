@@ -16,13 +16,15 @@ export class HomePage implements OnInit{
   nextlaunch: NextLaunch;
   observableNextLaunch: Observable<NextLaunch>;
 
-  constructor(private nextLaunchService: NextLaunchService, public navCtrl: NavController/*, private mission: Mission*/) { }
+  constructor(private nextLaunchService: NextLaunchService, public navCtrl: NavController/*, private mission: Mission*/) {
+  }
 
   async ngOnInit() {
     this.nextLaunchService.getNextLaunch().subscribe(result => {
       this.nextlaunch = result;
       this.chrono = this.convertUnixTimeToString(result.launch_date_unix);
     })
+
 
     setTimeout(() => {
       this.observableNextLaunch = this.nextLaunchService.getNextLaunch();

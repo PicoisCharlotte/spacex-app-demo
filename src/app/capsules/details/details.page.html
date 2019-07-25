@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Capsule Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <app-previous></app-previous>
+    <app-skeleton *ngIf="!capsule"></app-skeleton>
+      <div *ngIf="capsule" >
+        <div id="headerPage">
+          <div id="info" class="InsideContent">
+            <ion-label>
+              <h1>{{capsule.capsule_serial}}</h1>
+              <p>Id : <b>{{capsule.capsule_id}}</b></p>
+              <p>Status : <b>{{capsule.status}}</b></p>
+            </ion-label>
+          </div>
+        </div>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Info</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><b>Original launch</b> : {{capsule.original_launch}}</p>
+            <p><b>Original launch unix</b> : {{capsule.original_launch_unix}}</p>
+            <p><b>Landings</b> : {{capsule.landings}}</p>
+            <p><b>Type</b> : {{capsule.type}}</p>
+            
+            <ion-card-subtitle><b>Details</b></ion-card-subtitle>
+            <p>{{capsule.details}}</p>
+            
+            <p><b>Reuse count</b> : {{capsule.reuse_count}}</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngIf="hasMissions()">
+            <ion-card-header>
+                <ion-card-title>Missions</ion-card-title>
+              </ion-card-header>
+          <ion-card-content>
+              <ion-item-sliding *ngFor="let mission of capsule.missions">
+              <ion-item>
+              <ion-label>
+                <h2><b>Name</b> : {{ mission.name }}</h2>
+                <p><b>Flight</b> : {{ mission.flight }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-item-sliding>
+          </ion-card-content>
+        </ion-card>
+      </div>
+  </ion-content>

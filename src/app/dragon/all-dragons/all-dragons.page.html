@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dragons</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-skeleton *ngIf="!observableDragons"></app-skeleton>
+  <ion-list>
+    <ion-item-sliding *ngFor="let dragon of (observableDragons | async)"
+        [ngClass]="{'name': dragon.name === 'name',
+                    'type': dragon.type === 'type'}"
+        class="ion-activatable" (click)="getOneDragon(dragon.id)">
+        <ion-item href="http://localhost:8100/menu/dragons/dragon/{{dragon.id}}">
+        <ion-label>
+          <h2>{{ dragon.name }}</h2>
+          <p>{{ dragon.type }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

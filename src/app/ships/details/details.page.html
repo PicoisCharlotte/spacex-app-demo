@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Ship Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <app-previous></app-previous>
+    <app-skeleton *ngIf="!ship"></app-skeleton>
+      <div *ngIf="ship" >
+        <div id="headerPage">
+          <div id="info" class="InsideContent">
+            <ion-label>
+              <h1>{{ship.ship_id}}</h1>
+              <p>Name : <b>{{ship.ship_name}}</b></p>
+              <p *ngIf="ship.ship_model">Model : <b>{{ship.ship_model}}</b></p>
+            </ion-label>
+          </div>
+          <div id="wikipedia" class="InsideContent">
+              <ion-row>
+                  <ion-col size="2"></ion-col>
+                  <ion-col size="8" style="padding-top: 10px; text-align: center;">
+                    <div id="urls">
+                      <input type="image" src="{{ ship.image }}" (click)="urlShip()">
+                    </div>
+                  </ion-col>
+                  <ion-col size="2"></ion-col>
+              </ion-row>    
+          </div>
+        </div>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Info</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p *ngIf="ship.ship_type"><b>Type</b> : {{ship.ship_type}}</p>
+
+            <ion-card-subtitle *ngIf="ship.roles"><b>Roles</b></ion-card-subtitle>
+              <ion-item-sliding *ngFor="let role of ship.roles">
+                <ion-item>
+                  <ion-label>
+                    <p>{{role}}</p>
+                  </ion-label>
+                </ion-item>
+              </ion-item-sliding>
+              
+            <p *ngIf="ship.active"><b>Active</b> : {{ship.active}}</p>
+            <p *ngIf="ship.imo"><b>IMO</b> : {{ship.imo}}</p>
+            <p *ngIf="ship.mmsi"><b>MMSI</b> : {{ship.mmsi}}</p>
+            <p *ngIf="ship.abs"><b>ABS</b> : {{ship.abs}}</p>
+            <p *ngIf="ship.class"><b>Class</b> : {{ship.class}}</p>
+            <p *ngIf="ship.weight_kg || ship.ship_weight_lbs"><b>Weight</b> : {{ship.weight_kg}} kg / {{ship.weight_lbs}} lbs</p>
+            <p *ngIf="ship.year_build"><b>Year build</b> : {{ship.year_build}}</p>
+            <p *ngIf="ship.home_port"><b>Home port</b> : {{ship.home_port}}</p>
+            <p *ngIf="ship.status"><b>Status</b> : {{ship.status}}</p>
+            <p *ngIf="ship.speed_kn"><b>Speed</b> : {{ship.speed_kn}} kn</p>
+            <p *ngIf="ship.course_deg"><b>Course</b> : {{ship.course_deg}}</p>
+
+            <ion-card-subtitle *ngIf="ship.position.latitude || ship.position.longitude"><b>Position</b></ion-card-subtitle>
+            <p class="marge" *ngIf="ship.position.latitude">Latitude : {{ship.position.latitude}}</p>
+            <p class="marge" *ngIf="ship.position.longitude">Longitude : {{ship.position.longitude}}</p>
+
+            <ion-card-subtitle *ngIf="ship.successful_landings && ship.attempted_landings"><b>Landings</b></ion-card-subtitle>
+            <p class="marge" *ngIf="ship.successful_landings">Successful : {{ship.successful_landings}}</p>
+            <p class="marge" *ngIf="ship.attempted_landings">Attempted : {{ship.attempted_landings}}</p>
+            
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngIf="ship.missions">
+            <ion-card-header>
+                <ion-card-title>Missions</ion-card-title>
+              </ion-card-header>
+          <ion-card-content>
+              <ion-item-sliding *ngFor="let mission of ship.missions">
+              <ion-item>
+              <ion-label>
+                <h2><b>Name</b> : {{ mission.name }}</h2>
+                <p><b>Flight</b> : {{ mission.flight }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-item-sliding>
+          </ion-card-content>
+        </ion-card>
+      </div>
+  </ion-content>

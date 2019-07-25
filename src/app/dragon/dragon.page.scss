@@ -1,0 +1,28 @@
+.name{
+  border-left: 6px solid #111111;
+  margin: 0px 0 2px 0;
+}
+.type{
+  border-left: 6px solid var(--ion-color-warning);
+  margin: 0px 0 2px 0;
+}
+.InsideContent{
+  display:inline-block;
+}
+ion-img {
+  display: inline-block;
+}
+
+#info{
+  text-align: left;
+  padding-left: 5%;
+  width: 50%;
+}
+
+#urls {
+  #wikipedia {
+    align-content: right;
+      width: 25%;
+      padding-left: 2%;
+  }
+}

@@ -50,6 +50,24 @@ export class MenuPage implements OnInit {
       title: 'Landing Pad',
       url: '/menu/landingPads',
       icon: '/assets/icon/menu/landing-pads.svg'
+    },
+    {
+      title: 'Dragon',
+      url: '/menu/dragons',
+      icon: '/assets/icon/menu/dragon.png'
+
+    },
+    {
+      title: 'Capsule',
+      url: '/menu/all-capsules',
+      icon: '/assets/icon/menu/capsule.png'
+
+    },
+    {
+      title: 'Ship',
+      url: '/menu/ships',
+      icon: '/assets/icon/menu/ship.png'
+
     }
   ];
   constructor(
